@@ -67,11 +67,6 @@
           "path": "careers"
         },
         {
-          "id": "dash",
-          "label": "DASH",
-          "path": "dash"
-        },
-        {
           "id": "contact",
           "label": "CONTACTO",
           "path": "contact"
@@ -157,11 +152,6 @@
           "id": "careers",
           "label": "CAREERS",
           "path": "careers"
-        },
-        {
-          "id": "dash",
-          "label": "DASH",
-          "path": "dash"
         },
         {
           "id": "contact",
