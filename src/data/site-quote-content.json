@@ -24,7 +24,8 @@
       "details": "Cuéntenos lo que necesita...",
       "submit": "ENVIAR",
       "submitted": "ENVIADO",
-      "successNotice": "✓ Solicitud de cotización enviada correctamente. Nos pondremos en contacto a la brevedad."
+      "successNotice": "✓ Solicitud de cotización enviada correctamente. Nos pondremos en contacto a la brevedad.",
+      "errorNotice": "Ocurrió un error al enviar su solicitud de cotización. Por favor intente nuevamente."
     }
   },
   "en": {
@@ -52,7 +53,8 @@
       "details": "Tell us what you need...",
       "submit": "SUBMIT",
       "submitted": "SUBMITTED",
-      "successNotice": "✓ Freight quote request submitted successfully. Our team will contact you shortly."
+      "successNotice": "✓ Freight quote request submitted successfully. Our team will contact you shortly.",
+      "errorNotice": "An error occurred while submitting your freight quote. Please try again."
     }
   }
 }
