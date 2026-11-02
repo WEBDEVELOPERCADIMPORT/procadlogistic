@@ -1,6 +1,7 @@
 ---
 import type { Lang } from "../../../i18n/config.i18n";
 import type { ServiceItem } from "../../../actions/services/services.action";
+import serviceContent from "../../../data/site-service-content.json";
 
 interface Props {
   lang: Lang;
@@ -8,8 +9,9 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+const t = serviceContent[lang] ?? serviceContent.es;
 
-const heroTitle = lang === "es" ? "SERVICIOS" : "SERVICES";
+const heroTitle = t.hero.title;
 ---
 
 <section

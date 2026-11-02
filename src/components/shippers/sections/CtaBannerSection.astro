@@ -1,26 +1,30 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
 import FadeInText from '@astroanimate/core/FadeInText';
+import shippersContent from '../../../data/site-shippers-content.json';
 
 interface Props {
   lang: Lang;
 }
 
 const { lang } = Astro.props;
+const t = shippersContent[lang] ?? shippersContent.es;
 
-const bannerText = lang === 'es'
-  ? '¿NECESITA CAPACIDAD HOY? CONTACTE A PROCAD LOGISTIC'
-  : 'NEED CAPACITY TODAY? CONTACT PROCAD LOGISTIC';
+const bannerText = t.ctaBanner.text;
+const linkText = t.ctaBanner.linkText;
 ---
 
 <section class="w-full bg-[#00aeef] py-7 px-4 text-center">
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-7xl mx-auto space-y-1">
     <FadeInText duration={0.6}>
+      <h3 class="text-white font-black text-xl sm:text-2xl uppercase tracking-wider">
+        {bannerText}
+      </h3>
       <a
         href={`/${lang}/quote`}
-        class="inline-block text-white font-extrabold text-lg sm:text-xl uppercase tracking-wider hover:underline focus:outline-none"
+        class="inline-block mt-2 text-white/90 hover:text-white font-bold text-sm uppercase tracking-widest underline underline-offset-4"
       >
-        {bannerText} &rarr;
+        {linkText} &rarr;
       </a>
     </FadeInText>
   </div>

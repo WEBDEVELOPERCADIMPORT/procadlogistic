@@ -2,6 +2,7 @@
 import type { Lang } from '../../../i18n/config.i18n';
 import type { ServiceItem } from '../../../actions/services/services.action';
 import servicesData from '../../../data/services/services.data.json';
+import serviceContent from '../../../data/site-service-content.json';
 import FadeInText from '@astroanimate/core/FadeInText';
 
 interface Props {
@@ -10,15 +11,16 @@ interface Props {
 }
 
 const { lang, service } = Astro.props;
+const t = serviceContent[lang] ?? serviceContent.es;
 
 const allServices = servicesData.services as ServiceItem[];
 const serviceTitle = service.title[lang] ?? service.title.es;
 const serviceDescription = service.description[lang] ?? service.description.es;
 const capabilities = service.capabilities ?? [];
 
-const overviewLabel = lang === 'es' ? 'VISIÓN GENERAL' : 'OVERVIEW';
-const capabilitiesTitle = lang === 'es' ? 'CAPACIDADES' : 'CAPABILITIES';
-const quoteButtonText = lang === 'es' ? 'SOLICITAR COTIZACIÓN' : 'GET A QUOTE';
+const overviewLabel = t.detail.overviewLabel;
+const capabilitiesTitle = t.detail.capabilitiesTitle;
+const quoteButtonText = t.detail.quoteButtonText;
 ---
 
 <section class="w-full bg-white py-16 sm:py-24 text-neutral-900">
@@ -104,7 +106,7 @@ const quoteButtonText = lang === 'es' ? 'SOLICITAR COTIZACIÓN' : 'GET A QUOTE';
 
           <!-- Capabilities Accordion -->
           <div class="divide-y divide-gray-200 border-b border-gray-200" id="service-capabilities-accordion">
-            {capabilities.map((cap, idx) => {
+            {capabilities.map((cap) => {
               const capName = cap.name[lang] ?? cap.name.es;
               const capDesc = cap.description[lang] ?? cap.description.es;
               return (
@@ -115,19 +117,17 @@ const quoteButtonText = lang === 'es' ? 'SOLICITAR COTIZACIÓN' : 'GET A QUOTE';
                     aria-expanded="false"
                   >
                     <span>{capName}</span>
-                    <svg class="w-4 h-4 text-neutral-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                    <svg class="w-5 h-5 transition-transform duration-200 transform capability-icon text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-
-                  <div class="capability-content hidden mt-3 text-sm text-neutral-600 leading-relaxed pr-8">
-                    {capDesc}
+                  <div class="capability-panel hidden pt-3 text-sm text-neutral-600 leading-relaxed pr-8">
+                    <p>{capDesc}</p>
                   </div>
                 </div>
               );
             })}
           </div>
-
         </div>
 
       </div>
@@ -138,23 +138,32 @@ const quoteButtonText = lang === 'es' ? 'SOLICITAR COTIZACIÓN' : 'GET A QUOTE';
 
 <script>
   function setupCapabilitiesAccordion() {
-    const rows = document.querySelectorAll('.capability-row');
+    const container = document.getElementById('service-capabilities-accordion');
+    if (!container) return;
+
+    const rows = container.querySelectorAll('.capability-row');
     rows.forEach((row) => {
       const btn = row.querySelector('.capability-btn');
-      const content = row.querySelector('.capability-content');
-      const icon = row.querySelector('.chevron-icon');
+      const panel = row.querySelector('.capability-panel');
+      const icon = row.querySelector('.capability-icon');
 
-      if (!btn || !content) return;
+      if (btn && panel) {
+        btn.onclick = () => {
+          const isClosed = panel.classList.contains('hidden');
+          // Close all others
+          rows.forEach((r) => {
+            r.querySelector('.capability-panel')?.classList.add('hidden');
+            r.querySelector('.capability-icon')?.classList.remove('rotate-180');
+            r.querySelector('.capability-btn')?.setAttribute('aria-expanded', 'false');
+          });
 
-      btn.addEventListener('click', () => {
-        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!isExpanded));
-        content.classList.toggle('hidden');
-        if (icon) {
-          icon.classList.toggle('rotate-180');
-          icon.classList.toggle('text-[#00aeef]');
-        }
-      });
+          if (isClosed) {
+            panel.classList.remove('hidden');
+            icon?.classList.add('rotate-180');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        };
+      }
     });
   }
 

@@ -1,7 +1,7 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
 import type { ServiceItem } from '../../../actions/services/services.action';
-import defaultServicesData from '../../../data/services/services.data.json';
+import quoteContent from '../../../data/site-quote-content.json';
 import FadeInText from '@astroanimate/core/FadeInText';
 
 interface Props {
@@ -10,10 +10,11 @@ interface Props {
 }
 
 const { lang, service } = Astro.props;
+const t = quoteContent[lang];
 
-const currentService = service ?? (defaultServicesData.services[0] as ServiceItem);
-const serviceTitle = currentService.title[lang] ?? currentService.title.es;
-const serviceDescription = currentService.description[lang] ?? currentService.description.es;
+const serviceTitle = service ? (service.title[lang] ?? service.title.es) : t.defaultService.title;
+const serviceDescription = service ? (service.description[lang] ?? service.description.es) : t.defaultService.description;
+const serviceImage = service?.image ?? '/images/services/full-truckload.png';
 ---
 
 <section class="w-full bg-white pt-14 pb-10 text-neutral-900 border-b border-gray-200">
@@ -30,7 +31,7 @@ const serviceDescription = currentService.description[lang] ?? currentService.de
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
       <div class="md:col-span-4 bg-gray-100 border border-gray-200 overflow-hidden shadow-xs">
         <img
-          src={currentService.image}
+          src={serviceImage}
           alt={serviceTitle}
           class="w-full h-auto object-cover"
           loading="eager"

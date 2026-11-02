@@ -1,16 +1,18 @@
 ---
 import type { Lang } from "../../../i18n/config.i18n";
 import FadeInText from "@astroanimate/core/FadeInText";
+import homeContent from "../../../data/site-home-content.json";
 
 interface Props {
   lang: Lang;
 }
 
 const { lang } = Astro.props;
+const t = homeContent[lang] ?? homeContent.es;
 
-const titleLine1 = lang === "es" ? "LA CONFIABILIDAD," : "RELIABILITY,";
-const titleLine2 = lang === "es" ? "COMIENZA CON NOSOTROS." : "STARTS WITH US.";
-const ctaLabel = lang === "es" ? "SOLICITAR COTIZACIÓN" : "REQUEST A QUOTE";
+const titleLine1 = t.hero.titleLine1;
+const titleLine2 = t.hero.titleLine2;
+const ctaLabel = t.hero.ctaLabel;
 ---
 
 <section

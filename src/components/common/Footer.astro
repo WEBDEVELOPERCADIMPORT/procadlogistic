@@ -1,27 +1,18 @@
 ---
 import { getLangFromUrl } from '../../i18n/utils.i18n';
 import type { Lang } from '../../i18n/config.i18n';
+import globalContent from '../../data/site-global-content.json';
 
 interface Props {
   lang?: Lang;
 }
 
 const lang = Astro.props.lang ?? getLangFromUrl(Astro.url);
+const t = globalContent[lang] ?? globalContent.es;
 
-const socialLinks = [
-  { name: 'LinkedIn', url: 'https://linkedin.com/company/procadlogistic', icon: 'linkedin' },
-  { name: 'Email', url: 'mailto:marketing@procadlogistic.com', icon: 'email' },
-  { name: 'Instagram', url: 'https://instagram.com/procadlogistic', icon: 'instagram' },
-  { name: 'Facebook', url: 'https://facebook.com/procadlogistic', icon: 'facebook' },
-  { name: 'YouTube', url: 'https://youtube.com/@procadlogistic', icon: 'youtube' },
-];
-
-const footerLinks = [
-  { label: lang === 'es' ? 'CARRERAS' : 'CAREERS', path: 'careers' },
-  { label: 'DASH', path: 'dash' },
-  { label: lang === 'es' ? 'CONTACTO' : 'CONTACT', path: 'contact' },
-  { label: lang === 'es' ? 'TÉRMINOS Y CONDICIONES' : 'TERMS AND CONDITIONS', path: 'terms' },
-];
+const socialLinks = t.footer.socialLinks;
+const footerLinks = t.footer.links;
+const legalLine = t.footer.legalLine;
 ---
 
 <footer class="w-full bg-[#edebe8] py-14 px-6 text-neutral-800">
@@ -82,7 +73,7 @@ const footerLinks = [
     <!-- Bottom Legal Line -->
     <div class="pt-4 border-t border-neutral-300/80 w-full max-w-4xl">
       <p class="text-[11px] uppercase tracking-wider font-semibold text-neutral-600 leading-relaxed">
-        PROCAD LOGISTIC, 650 CENTERPOINT BLVD, NEW CASTLE, DELAWARE 19720, UNITED STATES | 3174750960 | MARKETING@PROCADLOGISTIC.COM
+        {legalLine}
       </p>
     </div>
 

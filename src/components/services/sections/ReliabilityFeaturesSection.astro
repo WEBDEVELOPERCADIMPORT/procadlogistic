@@ -2,36 +2,17 @@
 import type { Lang } from '../../../i18n/config.i18n';
 import FadeInText from '@astroanimate/core/FadeInText';
 import ScaleIn from '@astroanimate/core/ScaleIn';
+import serviceContent from '../../../data/site-service-content.json';
 
 interface Props {
   lang: Lang;
 }
 
 const { lang } = Astro.props;
+const t = serviceContent[lang] ?? serviceContent.es;
 
-const cards = [
-  {
-    title: lang === 'es' ? 'Soluciones a la Medida' : 'Custom Solutions',
-    description: lang === 'es' 
-      ? 'Diseñamos estrategias operativas adaptadas a las ventanas de entrega, tipo de carga y necesidades específicas de su negocio.' 
-      : 'We tailor logistics routing and capacity commitments to match your specific supply chain timelines and volume profile.',
-    icon: 'custom',
-  },
-  {
-    title: lang === 'es' ? 'Gestor de Cuenta Dedicado' : 'Dedicated Account Manager',
-    description: lang === 'es'
-      ? 'Un único punto de contacto con conocimiento profundo de su operación para resolver dudas y monitorear cada viaje.'
-      : 'A direct single point of contact who knows your facilities, freight nuances, and operational requirements.',
-    icon: 'manager',
-  },
-  {
-    title: lang === 'es' ? 'Soporte y Rastreo 24/7' : '24/7 Support',
-    description: lang === 'es'
-      ? 'Nuestra torre de control está activa todo el año monitoreando en tiempo real el progreso y estado de su carga.'
-      : 'Our live dispatch center operates 24/7/365 providing proactive milestone updates and emergency coverage.',
-    icon: 'support',
-  },
-];
+const rel = t.reliability;
+const cards = rel.cards;
 ---
 
 <section class="w-full bg-white py-16 sm:py-24 text-neutral-900 border-t border-gray-100">
@@ -40,11 +21,9 @@ const cards = [
     <!-- Title: RELIABILITY in cyan #00aeef -->
     <FadeInText duration={0.6} yOffset={20}>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-neutral-900">
-        {lang === 'es' ? (
-          <span>LA <span class="text-[#00aeef]">CONFIABILIDAD</span> COMIENZA CON NOSOTROS.</span>
-        ) : (
-          <span><span class="text-[#00aeef]">RELIABILITY</span> STARTS WITH US.</span>
-        )}
+        {rel.titlePrefix ? <span>{rel.titlePrefix} </span> : null}
+        <span class="text-[#00aeef]">{rel.titleHighlight} </span>
+        <span>{rel.titleSuffix}</span>
       </h2>
     </FadeInText>
 
@@ -54,13 +33,13 @@ const cards = [
         <ScaleIn duration={0.5} delay={index * 0.1}>
           <div class="h-full p-8 sm:p-10 bg-white border-2 border-[#00aeef] rounded-none flex flex-col items-center text-center space-y-4 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div class="w-16 h-16 rounded-full bg-cyan-50 flex items-center justify-center text-[#00aeef] mb-2">
-              {card.icon === 'custom' && (
+              {card.id === 'custom' && (
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
               )}
-              {card.icon === 'manager' && (
+              {card.id === 'manager' && (
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
               )}
-              {card.icon === 'support' && (
+              {card.id === 'support' && (
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
               )}
             </div>

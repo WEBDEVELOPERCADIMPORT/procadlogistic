@@ -5,108 +5,26 @@
       "title": "Solicitar Cotización de Carga y Fletes | ProCAD Logistic",
       "description": "Cotice su envío terrestre, carga completa, LTL o carga crítica en minutos con ProCAD Logistic. Tarifas competitivas y disponibilidad de equipo garantizada."
     },
-    "hero": {
-      "badge": "Cotización Rápida y sin Compromiso",
-      "title": "Obtenga la Mejor Tarifa para su Ruta de Carga",
-      "subtitle": "Complete los detalles de origen, destino y tipo de mercancía para recibir un presupuesto exacto y competitivo de inmediato."
+    "defaultService": {
+      "title": "COTIZACIÓN DE FLETE",
+      "description": "Indíquenos los requerimientos de su envío. Nuestro equipo de coordinación logística le brindará una solución de transporte competitiva, segura y puntual adaptada a sus necesidades operativas."
     },
-    "form": {
-      "badge": "Detalles del Envío",
-      "title": "Formulario de Solicitud de Flete",
-      "subtitle": "Proporcione la información más detallada posible para garantizar una cotización ágil y precisa.",
-      "steps": {
-        "step1": {
-          "title": "1. Origen y Destino",
-          "originPostalLabel": "Código Postal de Origen",
-          "originPostalPlaceholder": "Ej. 78045",
-          "originCityLabel": "Ciudad / Estado de Origen",
-          "originCityPlaceholder": "Ej. Laredo, TX",
-          "destinationPostalLabel": "Código Postal de Destino",
-          "destinationPostalPlaceholder": "Ej. 60638",
-          "destinationCityLabel": "Ciudad / Estado de Destino",
-          "destinationCityPlaceholder": "Ej. Chicago, IL"
-        },
-        "step2": {
-          "title": "2. Especificaciones de la Carga",
-          "serviceTypeLabel": "Modalidad de Servicio",
-          "serviceTypeOptions": [
-            { "value": "full-truckload", "label": "Carga Completa (FTL)" },
-            { "value": "less-than-truckload", "label": "Carga Parcial (LTL)" },
-            { "value": "expedited", "label": "Envío Urgente (Expedited)" },
-            { "value": "over-dimensional", "label": "Carga Sobredimensionada" },
-            { "value": "drayage", "label": "Arrastre Portuario (Drayage)" },
-            { "value": "managed-transportation", "label": "Transporte Gestionado" }
-          ],
-          "trailerTypeLabel": "Tipo de Remolque / Equipo",
-          "trailerTypeOptions": [
-            { "value": "dry-van", "label": "Caja Seca (Dry Van 53')" },
-            { "value": "reefer", "label": "Refrigerado (Reefer)" },
-            { "value": "flatbed", "label": "Plataforma (Flatbed)" },
-            { "value": "step-deck", "label": "Step Deck / Cama Baja" },
-            { "value": "rgn", "label": "Cuello de Ganso (RGN)" },
-            { "value": "container", "label": "Chasis Contenedor (20' / 40')" },
-            { "value": "sprinter-box", "label": "Camión Mediano / Sprinter Hotshot" }
-          ],
-          "weightLabel": "Peso Total Estimado (Lbs o Kg)",
-          "weightPlaceholder": "Ej. 42,000 lbs",
-          "palletsLabel": "Número de Pallets / Bultos",
-          "palletsPlaceholder": "Ej. 24 pallets",
-          "dimensionsLabel": "Dimensiones (Largo x Ancho x Alto)",
-          "dimensionsPlaceholder": "Ej. 48 x 40 x 60 pulgadas por pallet",
-          "specialRequirementsLabel": "Requisitos Especiales / Instrucciones",
-          "specialRequirementsPlaceholder": "Ej. Requiere rampa hidráulica, cita de entrega estricta, tarping..."
-        },
-        "step3": {
-          "title": "3. Fechas y Condiciones",
-          "pickupDateLabel": "Fecha Estimada de Carga",
-          "deliveryDateLabel": "Fecha Estimada de Entrega",
-          "isHazardousLabel": "¿Es Material Peligroso (Hazmat)?",
-          "isTemperatureControlledLabel": "¿Requiere Control de Temperatura Específico?"
-        },
-        "step4": {
-          "title": "4. Datos de Contacto para Enviar la Cotización",
-          "fullNameLabel": "Nombre Completo",
-          "fullNamePlaceholder": "Ej. Mariana Torres",
-          "emailLabel": "Correo Electrónico de Trabajo",
-          "emailPlaceholder": "mariana@empresa.com",
-          "phoneLabel": "Teléfono de Contacto",
-          "phonePlaceholder": "+1 (555) 012-3456",
-          "companyLabel": "Empresa / Negocio",
-          "companyPlaceholder": "Nombre de su Empresa"
-        }
-      },
-      "submitButton": "Calcular y Enviar Cotización",
-      "submittingButton": "Procesando Cotización...",
-      "guaranteeNote": "Respuesta garantizada en menos de 15 minutos en horario hábil para rutas regulares.",
-      "privacyNote": "Sus datos se encuentran protegidos bajo estrictas normas de confidencialidad comercial.",
-      "successTitle": "¡Solicitud de Cotización Recibida!",
-      "successMessage": "Nuestro equipo de despacho y análisis tarifario está evaluando su ruta. Recibirá su cotización formal al correo indicado.",
-      "errorMessage": "No pudimos enviar su solicitud de cotización. Por favor revise los campos o contáctenos telefónicamente."
-    },
-    "benefits": {
-      "badge": "¿Por Qué Cotizar con ProCAD?",
-      "title": "Ventajas al Reservar con Nosotros",
-      "subtitle": "Más que una tarifa, le entregamos certeza logística.",
-      "items": [
-        {
-          "id": "best_rate",
-          "icon": "calculator",
-          "title": "Tarifas Transparentes sin Recargos Ocultos",
-          "description": "Desglose claro de flete base, combustible y maniobras accesorias antes de autorizar el viaje."
-        },
-        {
-          "id": "fast_dispatch",
-          "icon": "zap",
-          "title": "Asignación Rápida de Equipo",
-          "description": "Capacidad confirmada con unidades disponibles en un radio óptimo a su punto de carga."
-        },
-        {
-          "id": "tracking_included",
-          "icon": "map-pin",
-          "title": "Rastreo Satelital Incluido",
-          "description": "Monitoreo GPS continuo con acceso a portal digital de estatus sin coste extra."
-        }
-      ]
+    "labels": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "company": "Nombre de la Empresa",
+      "email": "Dirección de Correo Electrónico",
+      "commodity": "Mercancía / Producto",
+      "pickupZip": "Código Postal de Recolección",
+      "deliveryZip": "Código Postal de Entrega",
+      "pickupDate": "Fecha de Recolección",
+      "subject": "Asunto",
+      "subjectPrefix": "Cotización para",
+      "defaultSubject": "Solicitud General de Cotización de Flete",
+      "details": "Cuéntenos lo que necesita...",
+      "submit": "ENVIAR",
+      "submitted": "ENVIADO",
+      "successNotice": "✓ Solicitud de cotización enviada correctamente. Nos pondremos en contacto a la brevedad."
     }
   },
   "en": {
@@ -115,108 +33,26 @@
       "title": "Request a Freight Shipping Quote | ProCAD Logistic",
       "description": "Request a freight quote for full truckload, LTL, heavy haul, or expedited shipping in minutes with ProCAD Logistic. Competitive pricing and dedicated equipment capacity."
     },
-    "hero": {
-      "badge": "Fast, No-Obligation Freight Quote",
-      "title": "Secure the Best Shipping Rate for Your Freight Lane",
-      "subtitle": "Provide origin, destination, and commodity specifications below to receive an accurate and competitive transportation rate immediately."
+    "defaultService": {
+      "title": "FREIGHT QUOTE REQUEST",
+      "description": "Tell us about your shipping requirements. Our dedicated freight logistics team will provide a dependable, cost-efficient, and on-time transportation proposal tailored to your operational needs."
     },
-    "form": {
-      "badge": "Shipment Details",
-      "title": "Freight Quote Request Form",
-      "subtitle": "Provide clear operational details to ensure the quickest and most precise pricing from our logistics coordinators.",
-      "steps": {
-        "step1": {
-          "title": "1. Origin & Destination",
-          "originPostalLabel": "Origin Zip / Postal Code",
-          "originPostalPlaceholder": "e.g. 78045",
-          "originCityLabel": "Origin City / State",
-          "originCityPlaceholder": "e.g. Laredo, TX",
-          "destinationPostalLabel": "Destination Zip / Postal Code",
-          "destinationPostalPlaceholder": "e.g. 60638",
-          "destinationCityLabel": "Destination City / State",
-          "destinationCityPlaceholder": "e.g. Chicago, IL"
-        },
-        "step2": {
-          "title": "2. Cargo Specifications",
-          "serviceTypeLabel": "Service Mode",
-          "serviceTypeOptions": [
-            { "value": "full-truckload", "label": "Full Truckload (FTL)" },
-            { "value": "less-than-truckload", "label": "Less Than Truckload (LTL)" },
-            { "value": "expedited", "label": "Expedited Delivery" },
-            { "value": "over-dimensional", "label": "Over-Dimensional / Heavy Haul" },
-            { "value": "drayage", "label": "Intermodal Port Drayage" },
-            { "value": "managed-transportation", "label": "Managed Transportation" }
-          ],
-          "trailerTypeLabel": "Trailer Equipment Needed",
-          "trailerTypeOptions": [
-            { "value": "dry-van", "label": "Standard Dry Van 53'" },
-            { "value": "reefer", "label": "Refrigerated Reefer" },
-            { "value": "flatbed", "label": "Flatbed Platform" },
-            { "value": "step-deck", "label": "Step Deck / Single Drop" },
-            { "value": "rgn", "label": "Removable Gooseneck (RGN)" },
-            { "value": "container", "label": "Container Chassis (20' / 40')" },
-            { "value": "sprinter-box", "label": "Straight Truck / Sprinter Hotshot" }
-          ],
-          "weightLabel": "Estimated Total Weight (Lbs or Kg)",
-          "weightPlaceholder": "e.g. 42,000 lbs",
-          "palletsLabel": "Number of Pallets / Units",
-          "palletsPlaceholder": "e.g. 24 pallets",
-          "dimensionsLabel": "Dimensions (Length x Width x Height)",
-          "dimensionsPlaceholder": "e.g. 48 x 40 x 60 in per pallet",
-          "specialRequirementsLabel": "Special Requirements / Notes",
-          "specialRequirementsPlaceholder": "e.g. Liftgate required, strict appointment time, driver assist, tarping..."
-        },
-        "step3": {
-          "title": "3. Scheduling & Freight Conditions",
-          "pickupDateLabel": "Target Pickup Date",
-          "deliveryDateLabel": "Required Delivery Date",
-          "isHazardousLabel": "Is Hazardous Material (Hazmat)?",
-          "isTemperatureControlledLabel": "Requires Specific Temperature Control?"
-        },
-        "step4": {
-          "title": "4. Contact Information to Receive Quote",
-          "fullNameLabel": "Full Contact Name",
-          "fullNamePlaceholder": "e.g. Mary Torres",
-          "emailLabel": "Business Email Address",
-          "emailPlaceholder": "mary@company.com",
-          "phoneLabel": "Contact Telephone",
-          "phonePlaceholder": "+1 (555) 012-3456",
-          "companyLabel": "Company / Business Name",
-          "companyPlaceholder": "Your Business Name"
-        }
-      },
-      "submitButton": "Calculate & Send Quote Request",
-      "submittingButton": "Calculating Quote...",
-      "guaranteeNote": "Guaranteed response within 15 minutes during standard operational hours for active lanes.",
-      "privacyNote": "Your commercial information is strictly safeguarded under enterprise confidentiality terms.",
-      "successTitle": "Quote Request Successfully Submitted!",
-      "successMessage": "Our dispatch and rate pricing coordinators are reviewing your lane. Your formal rate quote will be delivered to your email shortly.",
-      "errorMessage": "Unable to submit your quote request. Please verify the indicated fields or call our dispatch desk directly."
-    },
-    "benefits": {
-      "badge": "Why Quote with ProCAD?",
-      "title": "Benefits of Booking with Our Network",
-      "subtitle": "More than just a price quote, we provide logistical certainty.",
-      "items": [
-        {
-          "id": "best_rate",
-          "icon": "calculator",
-          "title": "Transparent Pricing With No Hidden Fees",
-          "description": "Clear line-haul rate breakdown including fuel surcharges and accessorials prior to dispatch approval."
-        },
-        {
-          "id": "fast_dispatch",
-          "icon": "zap",
-          "title": "Rapid Equipment Sourcing",
-          "description": "Confirmed capacity with qualified power and trailers positioned within close proximity to your shipping dock."
-        },
-        {
-          "id": "tracking_included",
-          "icon": "map-pin",
-          "title": "Complimentary Real-Time GPS Tracking",
-          "description": "Round-the-clock satellite tracking with instant client web portal access at no extra charge."
-        }
-      ]
+    "labels": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "company": "Company Name",
+      "email": "Email Address",
+      "commodity": "Commodity",
+      "pickupZip": "Pick Up Zip Code",
+      "deliveryZip": "Delivery Zip Code",
+      "pickupDate": "Pick Up Date",
+      "subject": "Subject",
+      "subjectPrefix": "Quote for",
+      "defaultSubject": "Freight Quote Request",
+      "details": "Tell us what you need...",
+      "submit": "SUBMIT",
+      "submitted": "SUBMITTED",
+      "successNotice": "✓ Freight quote request submitted successfully. Our team will contact you shortly."
     }
   }
 }

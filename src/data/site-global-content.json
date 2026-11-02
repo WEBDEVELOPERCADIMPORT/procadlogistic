@@ -18,6 +18,10 @@
       }
     ],
     "navbar": {
+      "servicesDropdownTitle": "NUESTROS SERVICIOS",
+      "viewAllServices": "VER TODOS LOS SERVICIOS →",
+      "langSwitchTitle": "Switch to English",
+      "langSwitchLabel": "🇺🇸 EN",
       "quoteCta": {
         "label": "COTIZAR AHORA",
         "path": "quote"
@@ -28,7 +32,7 @@
       "tagline": "Soluciones logísticas integrales y transporte de carga confiable en toda América del Norte.",
       "rights": "Todos los derechos reservados.",
       "copyright": "© 2026 ProCAD Logistic. Todos los derechos reservados.",
-      "legalText": "ProCAD Logistic LLC es una agencia de transporte de carga y proveedor logístico 3PL debidamente certificado y asegurado. Todos los servicios de flete y corretaje se rigen por nuestros términos operativos y el marco regulatorio de transporte de carga aplicable.",
+      "legalLine": "PROCAD LOGISTIC, 650 CENTERPOINT BLVD, NEW CASTLE, DELAWARE 19720, UNITED STATES | 3174750960 | MARKETING@PROCADLOGISTIC.COM",
       "socialLinks": [
         {
           "name": "LinkedIn",
@@ -37,7 +41,7 @@
         },
         {
           "name": "Email",
-          "url": "mailto:info@procadlogistic.com",
+          "url": "mailto:marketing@procadlogistic.com",
           "icon": "email"
         },
         {
@@ -78,6 +82,13 @@
           "path": "terms"
         }
       ]
+    },
+    "notFound": {
+      "title": "404 - No Encontrado",
+      "heading": "404",
+      "subheading": "¡Ups! Página no encontrada",
+      "message": "La página o el idioma que busca no existe o fue trasladado.",
+      "backHome": "Volver al Inicio"
     }
   },
   "en": {
@@ -99,6 +110,10 @@
       }
     ],
     "navbar": {
+      "servicesDropdownTitle": "OUR SERVICES",
+      "viewAllServices": "VIEW ALL SERVICES →",
+      "langSwitchTitle": "Cambiar a Español",
+      "langSwitchLabel": "🇲🇽 ES",
       "quoteCta": {
         "label": "GET A QUOTE",
         "path": "quote"
@@ -109,7 +124,7 @@
       "tagline": "Comprehensive logistics solutions and reliable freight transportation across North America.",
       "rights": "All rights reserved.",
       "copyright": "© 2026 ProCAD Logistic. All rights reserved.",
-      "legalText": "ProCAD Logistic LLC is a licensed and fully insured freight brokerage and third-party logistics (3PL) provider. All shipping services and brokerage operations are governed by our standard terms and applicable freight regulations.",
+      "legalLine": "PROCAD LOGISTIC, 650 CENTERPOINT BLVD, NEW CASTLE, DELAWARE 19720, UNITED STATES | 3174750960 | MARKETING@PROCADLOGISTIC.COM",
       "socialLinks": [
         {
           "name": "LinkedIn",
@@ -118,7 +133,7 @@
         },
         {
           "name": "Email",
-          "url": "mailto:info@procadlogistic.com",
+          "url": "mailto:marketing@procadlogistic.com",
           "icon": "email"
         },
         {
@@ -159,6 +174,13 @@
           "path": "terms"
         }
       ]
+    },
+    "notFound": {
+      "title": "404 - Not Found",
+      "heading": "404",
+      "subheading": "Oops! Page not found",
+      "message": "The page or language you requested does not exist or has been moved.",
+      "backHome": "Return to Home"
     }
   }
 }

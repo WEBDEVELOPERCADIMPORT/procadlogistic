@@ -2,6 +2,7 @@
 import type { Lang } from '../../../i18n/config.i18n';
 import type { ServiceItem } from '../../../actions/services/services.action';
 import defaultServicesData from '../../../data/services/services.data.json';
+import shippersContent from '../../../data/site-shippers-content.json';
 import FadeInText from '@astroanimate/core/FadeInText';
 import ScaleIn from '@astroanimate/core/ScaleIn';
 
@@ -11,14 +12,16 @@ interface Props {
 }
 
 const { lang, services } = Astro.props;
+const t = shippersContent[lang] ?? shippersContent.es;
 
 const servicesList: ServiceItem[] = (services && services.length > 0)
   ? services
   : (defaultServicesData.services as ServiceItem[]);
 
-const headerTitle = lang === 'es' ? 'LO QUE NECESITE. LO ENVIAMOS.' : 'YOU NAME IT. WE SHIP IT.';
-const overviewLabel = lang === 'es' ? 'VISIÓN GENERAL' : 'OVERVIEW';
-const learnMoreLabel = lang === 'es' ? 'CONOZCA MÁS' : 'LEARN MORE';
+const headerTitle = t.catalog.title;
+const headerSubtitle = t.catalog.subtitle;
+const overviewLabel = t.catalog.overviewLabel;
+const learnMoreLabel = t.catalog.learnMore;
 ---
 
 <section class="w-full bg-white py-16 sm:py-24 text-neutral-900">
@@ -55,15 +58,9 @@ const learnMoreLabel = lang === 'es' ? 'CONOZCA MÁS' : 'LEARN MORE';
             </h2>
           </FadeInText>
           <FadeInText duration={0.6} delay={0.1} yOffset={15}>
-            {lang === 'es' ? (
-              <p class="mt-4 text-base text-neutral-700 leading-relaxed max-w-3xl">
-                Respaldados por nuestra tecnología propietaria y una red integral de transporte de carga, ofrecemos <strong>soluciones integradas de corretaje</strong> que garantizan capacidad, puntualidad y eficiencia operativa.
-              </p>
-            ) : (
-              <p class="mt-4 text-base text-neutral-700 leading-relaxed max-w-3xl">
-                Backed by our proprietary logistics platform and trusted carrier network, we provide <strong>comprehensive brokerage solutions</strong> engineered for maximum certainty, capacity, and cost-efficiency.
-              </p>
-            )}
+            <p class="mt-4 text-base text-neutral-700 leading-relaxed max-w-3xl">
+              {headerSubtitle}
+            </p>
           </FadeInText>
         </div>
 

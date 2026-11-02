@@ -1,30 +1,26 @@
 ---
 import type { Lang } from "../../../i18n/config.i18n";
 import ScaleIn from "@astroanimate/core/ScaleIn";
+import homeContent from "../../../data/site-home-content.json";
 
 interface Props {
   lang: Lang;
 }
 
 const { lang } = Astro.props;
+const t = homeContent[lang] ?? homeContent.es;
 
 const shippers = {
-  title: lang === "es" ? "CARGADORES" : "SHIPPERS",
-  tagline:
-    lang === "es"
-      ? "Lo que necesite. Lo enviamos."
-      : "You name it. We ship it.",
-  cta: lang === "es" ? "CONOZCA MÁS" : "LEARN MORE",
+  title: t.audience.shippers.title,
+  tagline: t.audience.shippers.tagline,
+  cta: t.audience.shippers.cta,
   link: `/${lang}/shippers`,
 };
 
 const carriers = {
-  title: lang === "es" ? "TRANSPORTISTAS" : "CARRIERS",
-  tagline:
-    lang === "es"
-      ? "Conviértase en un socio confiable."
-      : "Become a trusted partner.",
-  cta: lang === "es" ? "CONOZCA MÁS" : "LEARN MORE",
+  title: t.audience.carriers.title,
+  tagline: t.audience.carriers.tagline,
+  cta: t.audience.carriers.cta,
   link: `/${lang}/contact`,
 };
 ---

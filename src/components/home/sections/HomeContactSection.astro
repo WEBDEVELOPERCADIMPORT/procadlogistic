@@ -1,23 +1,17 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
 import FadeInText from '@astroanimate/core/FadeInText';
+import homeContent from '../../../data/site-home-content.json';
 
 interface Props {
   lang: Lang;
 }
 
 const { lang } = Astro.props;
+const t = homeContent[lang] ?? homeContent.es;
 
-const texts = {
-  title: lang === 'es' ? '¿NECESITA MÁS INFORMACIÓN?' : 'NEED MORE INFORMATION?',
-  subtitle: lang === 'es' ? 'CONTÁCTENOS HOY MISMO' : 'GET IN TOUCH WITH US TODAY',
-  firstName: lang === 'es' ? 'Nombre' : 'First Name',
-  lastName: lang === 'es' ? 'Apellido' : 'Last Name',
-  email: lang === 'es' ? 'Correo Electrónico' : 'Email Address',
-  subject: lang === 'es' ? 'Asunto' : 'Subject',
-  message: lang === 'es' ? 'Mensaje' : 'Message',
-  submit: lang === 'es' ? 'ENVIAR' : 'SUBMIT',
-};
+const texts = t.contact;
+const f = texts.form;
 ---
 
 <section class="w-full bg-[#f8f9fa] py-20 lg:py-28 text-neutral-900 border-t border-gray-200">
@@ -37,7 +31,7 @@ const texts = {
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label for="home-first-name" class="block text-xs font-bold uppercase text-neutral-700 mb-1">
-            {texts.firstName} <span class="text-red-500">*</span>
+            {f.firstName} <span class="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -50,7 +44,7 @@ const texts = {
 
         <div>
           <label for="home-last-name" class="block text-xs font-bold uppercase text-neutral-700 mb-1">
-            {texts.lastName} <span class="text-red-500">*</span>
+            {f.lastName} <span class="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -64,7 +58,7 @@ const texts = {
 
       <div>
         <label for="home-email" class="block text-xs font-bold uppercase text-neutral-700 mb-1">
-          {texts.email} <span class="text-red-500">*</span>
+          {f.email} <span class="text-red-500">*</span>
         </label>
         <input
           type="email"
@@ -77,19 +71,20 @@ const texts = {
 
       <div>
         <label for="home-subject" class="block text-xs font-bold uppercase text-neutral-700 mb-1">
-          {texts.subject}
+          {f.subject} <span class="text-red-500">*</span>
         </label>
         <input
           type="text"
           id="home-subject"
           name="subject"
+          required
           class="w-full px-4 py-3 bg-white border border-gray-300 rounded-none text-neutral-900 text-sm focus:border-[#00aeef] focus:outline-none"
         />
       </div>
 
       <div>
         <label for="home-message" class="block text-xs font-bold uppercase text-neutral-700 mb-1">
-          {texts.message} <span class="text-red-500">*</span>
+          {f.message} <span class="text-red-500">*</span>
         </label>
         <textarea
           id="home-message"
@@ -102,13 +97,14 @@ const texts = {
 
       <div id="home-form-feedback" class="hidden p-3 bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-bold"></div>
 
+      <!-- Centered Dark Button #222222 -->
       <div class="text-center pt-4">
         <button
           type="submit"
           id="home-submit-btn"
-          class="inline-block bg-[#222222] hover:bg-black text-white text-xs font-black uppercase tracking-widest px-12 py-4 rounded-none transition-colors"
+          class="inline-block bg-[#222222] hover:bg-black text-white text-xs font-black uppercase tracking-widest px-14 py-4 rounded-none transition-colors"
         >
-          {texts.submit}
+          {f.submit}
         </button>
       </div>
     </form>
@@ -116,11 +112,11 @@ const texts = {
   </div>
 </section>
 
-<script>
+<script define:vars={{ successMsg: f.successMessage, submittedText: f.submitted }}>
   function setupHomeContact() {
-    const form = document.getElementById('home-contact-form') as HTMLFormElement | null;
+    const form = document.getElementById('home-contact-form');
     const feedback = document.getElementById('home-form-feedback');
-    const btn = document.getElementById('home-submit-btn') as HTMLButtonElement | null;
+    const btn = document.getElementById('home-submit-btn');
 
     if (!form || !feedback || !btn) return;
 
@@ -131,8 +127,8 @@ const texts = {
 
       setTimeout(() => {
         btn.disabled = false;
-        btn.textContent = 'ENVIADO';
-        feedback.textContent = '✓ Mensaje enviado correctamente.';
+        btn.textContent = submittedText;
+        feedback.textContent = successMsg;
         feedback.classList.remove('hidden');
         form.reset();
       }, 500);
