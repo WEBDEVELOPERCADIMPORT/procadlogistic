@@ -1,89 +1,258 @@
 ---
-import { getLangFromUrl, useTranslations } from "../../i18n/utils.i18n";
+import { getLangFromUrl } from "../../i18n/utils.i18n";
+import type { Lang } from "../../i18n/config.i18n";
+import servicesData from "../../data/services/services.data.json";
 
-const lang = getLangFromUrl(Astro.url);
-const { navLinks } = useTranslations(lang);
+interface Props {
+  lang?: Lang;
+}
 
+const lang = Astro.props.lang ?? getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
+
 const switchLangPath =
   lang === "es"
-    ? currentPath.replace("/es", "/en")
-    : currentPath.replace("/en", "/es");
+    ? currentPath.replace(/^\/es/, "/en")
+    : currentPath.replace(/^\/en/, "/es");
+
+const isShippersActive = currentPath.includes('/shippers') || currentPath.includes('/services');
+const isContactActive = currentPath.includes('/contact');
+const isAboutActive = currentPath === `/${lang}/` || currentPath === `/${lang}` || currentPath.includes('/about');
+
+const servicesList = servicesData.services;
+
+const labels = {
+  about: lang === "es" ? "SOBRE NOSOTROS" : "ABOUT US",
+  shippers: lang === "es" ? "CARGADORES" : "SHIPPERS",
+  contact: lang === "es" ? "CONTACTO" : "CONTACT",
+  quote: lang === "es" ? "COTIZAR" : "GET A QUOTE",
+};
 ---
 
-<nav
-  class="sticky top-0 z-50 w-full px-6 py-4 bg-transparent backdrop-blur-md border-b border-gray-100"
->
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
+<header class="sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-xs transition-all duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a
+        href={`/${lang}/`}
+        class="flex items-center transition-opacity hover:opacity-90 focus:outline-none"
+        aria-label="ProCAD Logistic Home"
+      >
+        <img
+          src="/logo.png"
+          alt="ProCAD Logistic"
+          class="h-10 sm:h-12 w-auto object-contain"
+        />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-8" aria-label="Main Navigation">
+        
+        <!-- ABOUT US (Points to Home) -->
+        <a
+          href={`/${lang}/`}
+          class={`text-xs uppercase tracking-widest font-extrabold transition-colors py-2 ${
+            isAboutActive ? 'text-[#00aeef]' : 'text-neutral-800 hover:text-[#00aeef]'
+          }`}
+        >
+          {labels.about}
+        </a>
+
+        <!-- SHIPPERS with Services Dropdown -->
+        <div class="relative group" id="shippers-dropdown-wrapper">
+          <div class="flex items-center gap-1">
+            <a
+              href={`/${lang}/shippers`}
+              class={`text-xs uppercase tracking-widest font-extrabold transition-colors py-2 ${
+                isShippersActive ? 'text-[#00aeef]' : 'text-neutral-800 hover:text-[#00aeef]'
+              }`}
+            >
+              {labels.shippers}
+            </a>
+            
+            <button
+              type="button"
+              id="shippers-dropdown-toggle"
+              class="p-1 text-neutral-600 hover:text-[#00aeef] transition-colors focus:outline-none"
+              aria-label="Toggle Services Dropdown"
+              aria-expanded="false"
+            >
+              <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Services Dropdown Menu -->
+          <div
+            id="shippers-dropdown-menu"
+            class="absolute left-0 top-full pt-2 w-72 hidden group-hover:block z-50"
+          >
+            <div class="bg-white border border-gray-200 rounded-none shadow-xl py-2">
+              <div class="px-4 py-2 border-b border-gray-100 bg-gray-50/80">
+                <p class="text-[10px] font-black uppercase tracking-widest text-[#00aeef]">
+                  {lang === "es" ? "Nuestros Servicios" : "Our Services"}
+                </p>
+              </div>
+
+              {servicesList.map((service) => {
+                const serviceTitle = service.title[lang] ?? service.title.es;
+                const isCurrent = currentPath.includes(`/services/${service.slug}`);
+                return (
+                  <a
+                    href={`/${lang}/services/${service.slug}`}
+                    class={`block px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-colors border-l-2 ${
+                      isCurrent
+                        ? 'border-[#00aeef] bg-cyan-50/50 text-[#00aeef]'
+                        : 'border-transparent text-neutral-700 hover:text-[#00aeef] hover:bg-gray-50 hover:border-[#00aeef]'
+                    }`}
+                  >
+                    {serviceTitle}
+                  </a>
+                );
+              })}
+
+              <div class="px-4 py-2 mt-1 border-t border-gray-100 bg-gray-50/50">
+                <a
+                  href={`/${lang}/shippers`}
+                  class="text-[11px] font-black uppercase tracking-wider text-[#00aeef] hover:underline flex items-center justify-between"
+                >
+                  <span>{lang === "es" ? "Ver todos los servicios" : "View all services"}</span>
+                  <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT -->
+        <a
+          href={`/${lang}/contact`}
+          class={`text-xs uppercase tracking-widest font-extrabold transition-colors py-2 ${
+            isContactActive ? 'text-[#00aeef]' : 'text-neutral-800 hover:text-[#00aeef]'
+          }`}
+        >
+          {labels.contact}
+        </a>
+
+        <!-- Language Switcher Pill -->
+        <a
+          href={switchLangPath}
+          class="flex items-center gap-1.5 px-3 py-1 text-xs font-bold text-neutral-700 bg-gray-100 border border-gray-200 hover:border-[#00aeef] hover:text-[#00aeef] transition-all"
+          title={lang === "es" ? "Switch to English" : "Cambiar a Español"}
+        >
+          <span>{lang === "es" ? "🇺🇸 EN" : "🇲🇽 ES"}</span>
+        </a>
+
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-3 md:hidden">
+        <a
+          href={switchLangPath}
+          class="px-2 py-1 text-xs font-bold text-neutral-700 bg-gray-100 border border-gray-200"
+        >
+          {lang === "es" ? "EN" : "ES"}
+        </a>
+
+        <button
+          type="button"
+          id="mobile-nav-toggle"
+          class="p-2 text-neutral-800 hover:text-[#00aeef] focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-nav-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-4 pt-3 pb-6 space-y-3">
     <a
       href={`/${lang}/`}
-      class="flex items-center gap-2 transition hover:opacity-80"
+      class={`block px-3 py-2 text-xs uppercase tracking-widest font-bold ${
+        isAboutActive ? 'text-[#00aeef]' : 'text-neutral-800 hover:text-[#00aeef]'
+      }`}
     >
-      <img
-        src="/logo.png"
-        class="w-30 h-10 object-contain"
-        alt="Logo del sitio"
-      />
+      {labels.about}
     </a>
 
-    <div class="flex items-center gap-6 sm:gap-8">
-      <ul class="flex items-center gap-6 text-sm font-medium text-gray-600">
-        {
-          navLinks.map((item) => (
-            <li class="relative group">
-              <a
-                href={item.href}
-                class="flex items-center gap-1 hover:text-blue-600 transition-colors py-1"
-              >
-                {item.label}
-                {item.children && (
-                  <svg
-                    class="w-3.5 h-3.5 transition-transform group-hover:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                )}
-              </a>
+    <div>
+      <div class="flex items-center justify-between px-3 py-2 text-xs uppercase tracking-widest font-bold text-neutral-800">
+        <a href={`/${lang}/shippers`} class="hover:text-[#00aeef]">{labels.shippers}</a>
+        <button type="button" id="mobile-services-accordion-btn" class="p-1 text-neutral-500">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+      </div>
 
-              {/* Menú flotante desplegable */}
-              {item.children && item.children.length > 0 && (
-                <div class="absolute left-0 top-full hidden group-hover:block pt-2 w-48 z-50">
-                  <ul class="bg-white/95 backdrop-blur-md border border-gray-100 rounded-xl shadow-xl p-1.5 flex flex-col gap-1">
-                    {item.children.map((child) => (
-                      <li>
-                        <a
-                          href={child.href}
-                          class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-lg transition-colors"
-                        >
-                          {child.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </li>
-          ))
-        }
-      </ul>
+      <div id="mobile-services-list" class="hidden pl-5 space-y-1 py-1 border-l-2 border-gray-100 ml-3">
+        {servicesList.map((service) => (
+          <a
+            href={`/${lang}/services/${service.slug}`}
+            class="block py-1 text-xs font-semibold uppercase text-neutral-600 hover:text-[#00aeef]"
+          >
+            {service.title[lang] ?? service.title.es}
+          </a>
+        ))}
+      </div>
+    </div>
 
-      <div class="hidden sm:block w-px h-5 bg-gray-200"></div>
+    <a
+      href={`/${lang}/contact`}
+      class="block px-3 py-2 text-xs uppercase tracking-widest font-bold text-neutral-800 hover:text-[#00aeef]"
+    >
+      {labels.contact}
+    </a>
 
+    <div class="pt-3 border-t border-gray-100">
       <a
-        href={switchLangPath}
-        class="flex items-center justify-center px-3 py-1.5 text-xs sm:text-sm font-semibold text-gray-700 bg-gray-50 border border-gray-200 rounded-full shadow-sm hover:bg-gray-100 hover:text-blue-600 transition-all active:scale-95"
-        title={lang === "es" ? "Switch to English" : "Cambiar a Español"}
+        href={`/${lang}/quote`}
+        class="block w-full text-center py-3 text-xs uppercase tracking-widest font-extrabold text-white bg-[#00aeef] hover:bg-[#0098d4]"
       >
-        {lang === "es" ? "🇺🇸 EN" : "🇲🇽 ES"}
+        {labels.quote}
       </a>
     </div>
   </div>
-</nav>
+</header>
+
+<script>
+  function setupNavbar() {
+    const mobileBtn = document.getElementById('mobile-nav-toggle');
+    const mobileMenu = document.getElementById('mobile-nav-menu');
+    const servicesAccordionBtn = document.getElementById('mobile-services-accordion-btn');
+    const servicesList = document.getElementById('mobile-services-list');
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    if (servicesAccordionBtn && servicesList) {
+      servicesAccordionBtn.addEventListener('click', () => {
+        servicesList.classList.toggle('hidden');
+      });
+    }
+
+    // Toggle for desktop dropdown click in addition to hover
+    const dropdownToggle = document.getElementById('shippers-dropdown-toggle');
+    const dropdownMenu = document.getElementById('shippers-dropdown-menu');
+    if (dropdownToggle && dropdownMenu) {
+      dropdownToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('hidden');
+      });
+      document.addEventListener('click', () => {
+        dropdownMenu.classList.add('hidden');
+      });
+    }
+  }
+
+  setupNavbar();
+  document.addEventListener('astro:page-load', setupNavbar);
+</script>

@@ -1,0 +1,159 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+import type { ServiceItem } from '../../../actions/services/services.action';
+import servicesData from '../../../data/services/services.data.json';
+
+interface Props {
+  lang: Lang;
+  service: ServiceItem;
+}
+
+const { lang, service } = Astro.props;
+
+const allServices = servicesData.services as ServiceItem[];
+const serviceTitle = service.title[lang] ?? service.title.es;
+const serviceDescription = service.description[lang] ?? service.description.es;
+const capabilities = service.capabilities ?? [];
+
+const overviewLabel = lang === 'es' ? 'VISIÓN GENERAL' : 'OVERVIEW';
+const capabilitiesTitle = lang === 'es' ? 'CAPACIDADES' : 'CAPABILITIES';
+const quoteButtonText = lang === 'es' ? 'SOLICITAR COTIZACIÓN' : 'GET A QUOTE';
+---
+
+<section class="w-full bg-white py-16 sm:py-24 text-neutral-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Left Sidebar: OVERVIEW + 6 Services list with active border-l-4 -->
+      <aside class="lg:col-span-3 space-y-4">
+        <div class="sticky top-28 bg-[#f8f9fa] p-6 border border-gray-200">
+          <a
+            href={`/${lang}/shippers`}
+            class="block text-xs font-black uppercase tracking-widest text-neutral-500 hover:text-[#00aeef] mb-4"
+          >
+            &larr; {overviewLabel}
+          </a>
+          
+          <ul class="space-y-3">
+            {allServices.map((s) => {
+              const isActive = s.slug === service.slug;
+              const sTitle = s.title[lang] ?? s.title.es;
+              return (
+                <li>
+                  <a
+                    href={`/${lang}/services/${s.slug}`}
+                    class={`block text-xs font-black uppercase tracking-wider transition-colors ${
+                      isActive
+                        ? 'border-l-4 border-[#00aeef] pl-3 text-[#00aeef]'
+                        : 'text-neutral-800 hover:text-[#00aeef] hover:pl-1'
+                    }`}
+                  >
+                    {sTitle}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Right Main Content Area -->
+      <div class="lg:col-span-9 space-y-12">
+        
+        <!-- Header: Service Title in Cyan -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#00aeef]">
+          {serviceTitle}
+        </h2>
+
+        <!-- 2 Columns: Service Photo (Left) + Description (Right) -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-5 bg-gray-100 overflow-hidden shadow-xs border border-gray-200">
+            <img
+              src={service.image}
+              alt={serviceTitle}
+              class="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="md:col-span-7 space-y-4">
+            <p class="text-base text-neutral-700 leading-relaxed font-normal">
+              {serviceDescription}
+            </p>
+          </div>
+        </div>
+
+        <!-- Capabilities Section -->
+        <div class="pt-8 border-t border-gray-200 space-y-6">
+          <!-- Capabilities Header with cyan GET A QUOTE button on right -->
+          <div class="flex items-center justify-between pb-4 border-b-2 border-neutral-900">
+            <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-neutral-900">
+              {capabilitiesTitle}
+            </h3>
+            <a
+              href={`/${lang}/quote?service=${service.slug}`}
+              class="bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-6 py-2.5 rounded-none transition-colors"
+            >
+              {quoteButtonText}
+            </a>
+          </div>
+
+          <!-- Capabilities Accordion -->
+          <div class="divide-y divide-gray-200 border-b border-gray-200" id="service-capabilities-accordion">
+            {capabilities.map((cap, idx) => {
+              const capName = cap.name[lang] ?? cap.name.es;
+              const capDesc = cap.description[lang] ?? cap.description.es;
+              return (
+                <div class="py-4 capability-row">
+                  <button
+                    type="button"
+                    class="capability-btn w-full flex items-center justify-between text-left font-bold text-base sm:text-lg text-neutral-900 hover:text-[#00aeef] transition-colors focus:outline-none"
+                    aria-expanded="false"
+                  >
+                    <span>{capName}</span>
+                    <svg class="w-4 h-4 text-neutral-400 transform transition-transform duration-200 chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  <div class="capability-content hidden mt-3 text-sm text-neutral-600 leading-relaxed pr-8">
+                    {capDesc}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupCapabilitiesAccordion() {
+    const rows = document.querySelectorAll('.capability-row');
+    rows.forEach((row) => {
+      const btn = row.querySelector('.capability-btn');
+      const content = row.querySelector('.capability-content');
+      const icon = row.querySelector('.chevron-icon');
+
+      if (!btn || !content) return;
+
+      btn.addEventListener('click', () => {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isExpanded));
+        content.classList.toggle('hidden');
+        if (icon) {
+          icon.classList.toggle('rotate-180');
+          icon.classList.toggle('text-[#00aeef]');
+        }
+      });
+    });
+  }
+
+  setupCapabilitiesAccordion();
+  document.addEventListener('astro:page-load', setupCapabilitiesAccordion);
+</script>

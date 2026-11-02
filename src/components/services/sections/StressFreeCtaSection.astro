@@ -1,0 +1,45 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+
+interface Props {
+  lang: Lang;
+  currentSlug?: string;
+}
+
+const { lang, currentSlug } = Astro.props;
+
+const quoteUrl = currentSlug ? `/${lang}/quote?service=${currentSlug}` : `/${lang}/quote`;
+const quoteBtnText = lang === 'es' ? 'SOLICITAR COTIZACIÓN' : 'GET A QUOTE';
+---
+
+<section class="w-full bg-[#1c2430] py-16 px-4 text-center text-white">
+  <div class="max-w-4xl mx-auto flex flex-col items-center justify-center space-y-6">
+    
+    <!-- Title with FREE in Cyan -->
+    <h2 class="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight flex items-center justify-center gap-3">
+      {lang === 'es' ? (
+        <span>ENVÍE SIN <span class="text-[#00aeef]">ESTRÉS</span></span>
+      ) : (
+        <span>SHIP STRESS <span class="text-[#00aeef]">FREE</span></span>
+      )}
+    </h2>
+
+    <!-- Down Chevron Icon -->
+    <div class="text-[#00aeef]">
+      <svg class="w-8 h-8 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+
+    <!-- Cyan Button -->
+    <div class="pt-2">
+      <a
+        href={quoteUrl}
+        class="inline-block bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs sm:text-sm font-black uppercase tracking-widest px-10 py-4 rounded-none transition-colors shadow-md"
+      >
+        {quoteBtnText}
+      </a>
+    </div>
+
+  </div>
+</section>

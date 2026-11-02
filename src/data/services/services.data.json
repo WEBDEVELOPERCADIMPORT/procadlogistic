@@ -1,0 +1,415 @@
+{
+  "services": [
+    {
+      "id": "full-truckload",
+      "slug": "full-truckload",
+      "title": {
+        "es": "Carga Completa (FTL)",
+        "en": "Full Truckload (FTL)"
+      },
+      "tagline": {
+        "es": "Capacidad dedicada y rutas directas para sus envíos de mayor volumen en Norteamérica.",
+        "en": "Dedicated capacity and direct point-to-point transit for high-volume freight across North America."
+      },
+      "description": {
+        "es": "Nuestro servicio de Carga Completa (FTL) asigna vehículos exclusivos de origen a destino final sin transbordos innecesarios, minimizando el riesgo de daños, optimizando tiempos de entrega y brindando control total con rastreo satelital continuo.",
+        "en": "Our Full Truckload (FTL) service commits dedicated equipment directly from origin to destination without intermediate handling, minimizing cargo risk, optimizing transit speed, and delivering complete control through 24/7 satellite tracking."
+      },
+      "image": "/images/services/full-truckload.png",
+      "capabilities": [
+        {
+          "id": "dry-van",
+          "name": {
+            "es": "Caja Seca (Dry Van)",
+            "en": "Dry Van"
+          },
+          "description": {
+            "es": "Remolques cerrados de 53 pies climatológicamente sellados, ideales para mercancías generales, productos empacados, electrónicos y bienes de consumo.",
+            "en": "Standard 53-foot enclosed weather-sealed trailers designed for general merchandise, packaged goods, electronics, and consumer retail products."
+          }
+        },
+        {
+          "id": "temperature-controlled",
+          "name": {
+            "es": "Control de Temperatura (Reefer)",
+            "en": "Temperature Controlled"
+          },
+          "description": {
+            "es": "Unidades refrigeradas de última generación con telemetría en tiempo real para alimentos congelados, productos frescos y farmacéuticos.",
+            "en": "State-of-the-art refrigerated units with continuous telemetry for frozen foods, fresh perishables, and temperature-critical pharmaceuticals."
+          }
+        },
+        {
+          "id": "flatbed",
+          "name": {
+            "es": "Plataforma (Flatbed)",
+            "en": "Flatbed"
+          },
+          "description": {
+            "es": "Plataformas abiertas y modulares para maquinaria industrial, tuberías, perfiles de acero y materiales de construcción de carga lateral o con grúa.",
+            "en": "Open deck and modular platform trailers engineered for industrial machinery, steel pipe, lumber, and crane-loaded building supplies."
+          }
+        },
+        {
+          "id": "power-only",
+          "name": {
+            "es": "Solo Tracción (Power Only)",
+            "en": "Power Only"
+          },
+          "description": {
+            "es": "Tractocamiones con operadores certificados listos para enganchar y movilizar remolques y equipos propios del cliente de manera ágil.",
+            "en": "High-spec tractors and certified operators ready to hook and transport shipper-owned trailers, drop fleets, and leased equipment."
+          }
+        },
+        {
+          "id": "drop-trailer",
+          "name": {
+            "es": "Remolque en Espera (Drop Trailer)",
+            "en": "Drop Trailer"
+          },
+          "description": {
+            "es": "Posicionamiento anticipado de remolques en sus instalaciones para carga y descarga flexible según el ritmo de sus operaciones.",
+            "en": "Strategic pre-staging of trailers at shipper facilities to allow flexible, asynchronous loading and unloading without driver detention."
+          }
+        },
+        {
+          "id": "intermodal",
+          "name": {
+            "es": "Transporte Intermodal",
+            "en": "Intermodal Rail & Road"
+          },
+          "description": {
+            "es": "Sinergia entre ferrocarril y carretera que reduce costes operativos y disminuye la huella de carbono en rutas de larga distancia.",
+            "en": "Seamless integration of rail and highway long-haul corridors that cuts transportation spend and significantly lowers carbon emissions."
+          }
+        }
+      ]
+    },
+    {
+      "id": "less-than-truckload",
+      "slug": "less-than-truckload",
+      "title": {
+        "es": "Carga Parcial (LTL)",
+        "en": "Less Than Truckload (LTL)"
+      },
+      "tagline": {
+        "es": "Tarifas competitivas y máxima flexibilidad para envíos que no requieren un remolque completo.",
+        "en": "Cost-effective rates and maximum flexibility for shipments that do not require an entire trailer."
+      },
+      "description": {
+        "es": "Optimice sus costos de envío pagando únicamente por el espacio y peso que utiliza. Gestionamos su carga consolidada a través de una red confiable de terminales de transbordo con altos estándares de puntualidad y cuidado.",
+        "en": "Optimize freight spend by paying only for the space and weight your cargo occupies. We route your consolidated shipments across a vetted hub network maintaining rigorous on-time performance and freight protection."
+      },
+      "image": "/images/services/less-than-truckload.png",
+      "capabilities": [
+        {
+          "id": "standard-ltl",
+          "name": {
+            "es": "LTL Estándar",
+            "en": "Standard LTL"
+          },
+          "description": {
+            "es": "Servicio confiable y económico para pallets y cajas individuales en las principales rutas comerciales nacionales.",
+            "en": "Economical and predictable line-haul shipping for individual pallets and boxed shipments across major commercial lanes."
+          }
+        },
+        {
+          "id": "guaranteed-ltl",
+          "name": {
+            "es": "LTL Garantizado",
+            "en": "Guaranteed LTL"
+          },
+          "description": {
+            "es": "Compromiso de entrega en fecha y hora específica, ideal para recepciones programadas y ventanas de entrega estrictas.",
+            "en": "Guaranteed delivery dates and appointed morning time-slots designed for tight retail and production receiving windows."
+          }
+        },
+        {
+          "id": "volume-ltl",
+          "name": {
+            "es": "LTL por Volumen",
+            "en": "Volume LTL"
+          },
+          "description": {
+            "es": "Precios preferenciales para envíos de más de 5 pallets o más de 5,000 libras que no llegan a remolque completo.",
+            "en": "Discounted rate structures for partial loads exceeding 5 pallets or 5,000 lbs that do not warrant a full dedicated truck."
+          }
+        },
+        {
+          "id": "consolidation",
+          "name": {
+            "es": "Consolidación de Carga",
+            "en": "Freight Consolidation"
+          },
+          "description": {
+            "es": "Agrupación estratégica de envíos de múltiples proveedores para reducir manipulación y abaratar costes de flete.",
+            "en": "Strategic grouping of multiple vendor orders into single direct runs to minimize touchpoints and reduce transportation fees."
+          }
+        },
+        {
+          "id": "cross-docking",
+          "name": {
+            "es": "Cross-Docking",
+            "en": "Cross-Docking"
+          },
+          "description": {
+            "es": "Transferencia rápida y directa de mercancías entre camiones sin almacenamiento prolongado en almacén intermedio.",
+            "en": "Direct incoming-to-outgoing dock transfers eliminating prolonged warehousing times and accelerating distribution."
+          }
+        }
+      ]
+    },
+    {
+      "id": "expedited",
+      "slug": "expedited",
+      "title": {
+        "es": "Envío Urgente (Expedited)",
+        "en": "Expedited Freight"
+      },
+      "tagline": {
+        "es": "Respuesta inmediata y tránsito sin pausas para envíos críticos de tiempo.",
+        "en": "Immediate dispatch and nonstop transit for your most time-critical freight."
+      },
+      "description": {
+        "es": "Cuando cada minuto cuenta, nuestro servicio urgente moviliza unidades dedicadas con operadores dobles (team drivers) o vuelos chárter para garantizar la entrega en el menor tiempo humanamente posible, con seguimiento prioritario minuto a minuto.",
+        "en": "When minutes matter, our expedited shipping service mobilizes dedicated equipment with team drivers or air charter solutions to guarantee fastest achievable arrival, backed by proactive minute-by-minute tracking."
+      },
+      "image": "/images/services/expedited.png",
+      "capabilities": [
+        {
+          "id": "hot-shot",
+          "name": {
+            "es": "Hot Shot Dedicado",
+            "en": "Dedicated Hot Shot"
+          },
+          "description": {
+            "es": "Camionetas y camiones medianos listos para cargar en menos de 60 minutos con destino directo exclusivo.",
+            "en": "Sprinters, straight trucks, and gooseneck hotshots deployed within 60 minutes for dedicated door-to-door sprint transit."
+          }
+        },
+        {
+          "id": "team-drivers",
+          "name": {
+            "es": "Choferes en Equipo (Team Driving)",
+            "en": "Team Driving Service"
+          },
+          "description": {
+            "es": "Dos conductores alternando turnos para mantener la unidad en constante movimiento las 24 horas del día.",
+            "en": "Dual drivers rotating shifts to keep wheels turning 24/7 nonstop across cross-country transits."
+          }
+        },
+        {
+          "id": "same-day",
+          "name": {
+            "es": "Entrega en el Mismo Día",
+            "en": "Same-Day Delivery"
+          },
+          "description": {
+            "es": "Soluciones regionales inmediatas para resolver emergencias de inventario, piezas de repuesto y líneas de producción detenidas.",
+            "en": "Urgent regional delivery within hours to prevent assembly line stoppages, critical parts shortages, and inventory emergencies."
+          }
+        },
+        {
+          "id": "air-ground-critical",
+          "name": {
+            "es": "Transporte Crítico Aéreo y Terrestre",
+            "en": "Time-Critical Air & Ground"
+          },
+          "description": {
+            "es": "Combinación de servicios aéreos de próximo vuelo disponible (NFO) con recolección y entrega terrestre prioritaria.",
+            "en": "Next-Flight-Out (NFO) air cargo coupled with expedited tarmac pick-up and express final-mile delivery."
+          }
+        }
+      ]
+    },
+    {
+      "id": "over-dimensional",
+      "slug": "over-dimensional",
+      "title": {
+        "es": "Carga Sobredimensionada",
+        "en": "Over Dimensional & Heavy Haul"
+      },
+      "tagline": {
+        "es": "Ingeniería de transporte, permisos y equipo especializado para cargas extrapesadas y de gran volumen.",
+        "en": "Specialized transport engineering, permits, and heavy haul trailers for superloads and out-of-gauge freight."
+      },
+      "description": {
+        "es": "Mover cargas que exceden los límites legales de peso y dimensiones exige planificación rigurosa. Gestionamos el estudio de ruta, los permisos gubernamentales necesarios, las unidades escolta y el equipo especializado para mover su maquinaria de manera segura y regulada.",
+        "en": "Transporting out-of-gauge and heavy-weight equipment demands meticulous route engineering. We handle route surveys, state and municipal permits, certified escort pilots, and specialized multi-axle trailers to deliver complete compliance and safety."
+      },
+      "image": "/images/services/over-dimensional.png",
+      "capabilities": [
+        {
+          "id": "heavy-haul",
+          "name": {
+            "es": "Carga Pesada Especializada",
+            "en": "Specialized Heavy Haul"
+          },
+          "description": {
+            "es": "Configuraciones multieje para mover transformadores, turbinas, componentes industriales y estructuras metálicas de más de 100,000 libras.",
+            "en": "Multi-axle and perimeter configurations capable of handling transformers, generators, turbines, and industrial superloads exceeding 100,000 lbs."
+          }
+        },
+        {
+          "id": "rgn",
+          "name": {
+            "es": "Cuello de Ganso Desmontable (RGN)",
+            "en": "Removable Gooseneck (RGN)"
+          },
+          "description": {
+            "es": "Remolques desmontables que permiten cargar maquinaria rodante y excavadoras directamente a nivel de suelo.",
+            "en": "Detachable gooseneck trailers allowing heavy wheeled and tracked construction machinery to drive on and off directly at ground level."
+          }
+        },
+        {
+          "id": "step-deck",
+          "name": {
+            "es": "Plataforma Escalonada (Step Deck)",
+            "en": "Step Deck Trailers"
+          },
+          "description": {
+            "es": "Camas bajas diseñadas para transportar cargas altas evitando restricciones de puentes y túneles sin necesidad de permisos especiales.",
+            "en": "Drop deck trailers providing extra overhead clearance to accommodate tall industrial freight beneath highway overpasses."
+          }
+        },
+        {
+          "id": "permits-escorts",
+          "name": {
+            "es": "Permisos y Escoltas de Ruta",
+            "en": "Permitting & Pilot Escorts"
+          },
+          "description": {
+            "es": "Gestión integral de licencias viales, estudios de gálibo y coordinación con unidades piloto de escolta certificadas.",
+            "en": "Turnkey acquisition of oversized/overweight permits, route clearance surveys, and coordination of certified pilot car escort teams."
+          }
+        }
+      ]
+    },
+    {
+      "id": "drayage",
+      "slug": "drayage",
+      "title": {
+        "es": "Transporte Intermodal y Portuario (Drayage)",
+        "en": "Intermodal & Port Drayage"
+      },
+      "tagline": {
+        "es": "Conexión ágil entre puertos marítimos, terminales ferroviarias y sus centros de distribución.",
+        "en": "Streamlined container transfers between ocean ports, rail ramps, and inland distribution centers."
+      },
+      "description": {
+        "es": "Facilitamos el movimiento ágil de contenedores marítimos y ferroviarios desde y hacia los principales puertos y patios multimodales. Evite cargos por demoras y detención con nuestra gestión de citas, custodia de chasis y patios de maniobras seguros.",
+        "en": "We streamline ocean and domestic container flow through primary sea gates and rail terminals. Eliminate per diem and demurrage risks with automated appointment scheduling, dedicated chassis pools, and secure yard storage."
+      },
+      "image": "/images/services/drayage.png",
+      "capabilities": [
+        {
+          "id": "port-drayage",
+          "name": {
+            "es": "Arrastre Portuario",
+            "en": "Ocean Port Drayage"
+          },
+          "description": {
+            "es": "Recolección y entrega rápida de contenedores de importación y exportación en los principales recintos portuarios.",
+            "en": "Rapid pull and dispatch of import/export ocean containers through congested coastal maritime terminals."
+          }
+        },
+        {
+          "id": "rail-drayage",
+          "name": {
+            "es": "Arrastre Ferroviario",
+            "en": "Rail Ramp Drayage"
+          },
+          "description": {
+            "es": "Conexiones regulares de primera y última milla en rampas intermodales ferroviarias estratégicas.",
+            "en": "First- and final-mile container transport to and from major inland Class I intermodal railroad ramps."
+          }
+        },
+        {
+          "id": "container-storage",
+          "name": {
+            "es": "Patio y Custodia de Contenedores",
+            "en": "Container Yard & Storage"
+          },
+          "description": {
+            "es": "Patios cerrados y vigilados las 24 horas para almacenamiento temporal de contenedores vacíos o cargados.",
+            "en": "Secure 24/7 monitored yard storage for loaded and empty ocean containers to mitigate marine terminal demurrage fees."
+          }
+        },
+        {
+          "id": "customs-pier",
+          "name": {
+            "es": "Despacho Portuario y Aduanal",
+            "en": "Pier & Customs Clearance"
+          },
+          "description": {
+            "es": "Coordinación documental para liberación expedita en muelles y cumplimiento de inspecciones aduanales.",
+            "en": "Smooth document verification, bond coordination, and expedited pier clearance under customs oversight."
+          }
+        }
+      ]
+    },
+    {
+      "id": "managed-transportation",
+      "slug": "managed-transportation",
+      "title": {
+        "es": "Transporte Gestionado (3PL)",
+        "en": "Managed Transportation (3PL)"
+      },
+      "tagline": {
+        "es": "Externalización estratégica y optimización continua de toda su cadena de distribución logística.",
+        "en": "End-to-end freight management, business intelligence, and supply chain optimization for growing enterprises."
+      },
+      "description": {
+        "es": "Transforme su logística en una ventaja competitiva. Nuestro equipo asume la planificación, contratación de transporte, rastreo en vivo, auditoría de facturas y análisis de indicadores clave para reducir costes y elevar el nivel de servicio.",
+        "en": "Turn your logistics into a competitive advantage. Our dedicated account teams assume control of load planning, carrier procurement, 24/7 exception management, freight audit, and predictive analytics to drive sustained savings and service performance."
+      },
+      "image": "/images/services/managed-transportation.png",
+      "capabilities": [
+        {
+          "id": "fleet-management",
+          "name": {
+            "es": "Gestión de Flota Dedicada",
+            "en": "Dedicated Fleet Management"
+          },
+          "description": {
+            "es": "Administración integral de rutas y capacidad contratada para satisfacer sus picos estacionales de demanda.",
+            "en": "Comprehensive planning and contracted dedicated capacity calibrated to fulfill continuous demand and seasonal peaks."
+          }
+        },
+        {
+          "id": "tracking-visibility",
+          "name": {
+            "es": "Visibilidad 24/7 de Cadena de Suministro",
+            "en": "24/7 Supply Chain Visibility"
+          },
+          "description": {
+            "es": "Torre de control tecnológica con alertas automáticas de estado, geolocalización y previsión de llegadas (ETA).",
+            "en": "Centralized control tower offering automated milestone alerts, live GPS telemetry, and predictive arrival notifications (ETA)."
+          }
+        },
+        {
+          "id": "freight-audit",
+          "name": {
+            "es": "Auditoría y Analítica de Fletes",
+            "en": "Freight Audit & Analytics"
+          },
+          "description": {
+            "es": "Revisión sistemática de facturación de fletes, control de costos accesorios y reportes ejecutivos de rendimiento.",
+            "en": "Automated freight bill verification, accessorial fee auditing, and executive business intelligence reporting."
+          }
+        },
+        {
+          "id": "carrier-optimization",
+          "name": {
+            "es": "Optimización de Red de Transportistas",
+            "en": "Carrier Network Optimization"
+          },
+          "description": {
+            "es": "Calificación continua de transportistas, negociación de tarifas competitivas y balance dinámico de volúmenes.",
+            "en": "Rigorous carrier vetting, competitive rate benchmarking, and dynamic load consolidation algorithms to lower overall spend."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import quoteContent from '../../../data/site-quote-content.json';
+import { LANGUAGES, type Lang } from '../../../i18n/config.i18n';
+import { actions } from 'astro:actions';
+import QuoteHeaderSection from '../../../components/quote/sections/QuoteHeaderSection.astro';
+import FreightQuoteFormSection from '../../../components/quote/sections/FreightQuoteFormSection.astro';
+
+const lang = Astro.params.lang as Lang;
+
+// 1. Validar idioma
+if (!(lang in LANGUAGES) || !(lang in quoteContent)) {
+  return Astro.redirect('/404');
+}
+
+const content = quoteContent[lang];
+
+// 2. Comprobar si hay un servicio preseleccionado por query param (ej. /es/quote?service=full-truckload)
+const preselectedSlug = Astro.url.searchParams.get('service') || 'full-truckload';
+const { data: serviceRes } = await Astro.callAction(actions.getServiceBySlug, { slug: preselectedSlug });
+const selectedService = serviceRes?.data;
+---
+
+<Layout
+  title={content.meta.title}
+  lang={lang}
+  description={content.meta.description}
+>
+  <main class="w-full bg-white">
+    <QuoteHeaderSection lang={lang} service={selectedService} />
+    <FreightQuoteFormSection lang={lang} service={selectedService} />
+  </main>
+</Layout>

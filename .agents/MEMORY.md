@@ -119,12 +119,17 @@ src/
 | :--- | :--- | :--- | :--- |
 | **Global Layout & SEO** | `src/layouts/Layout.astro` | Activo | Plantilla base con Open Graph, Twitter Cards, `ClientRouter` y JSON-LD. |
 | **Internacionalización** | `src/i18n/` | Activo | Idiomas `es` y `en` con helpers de traducción y rutas. |
-| **Navbar & Footer** | `src/components/common/` | Activo | Navegación global con soporte para submenús y enlaces i18n. |
+| **Navbar & Footer** | `src/components/common/` | Activo | Navegación global ProCad Logistic con redes sociales, links legales y switch i18n. |
 | **Reviews Component** | `src/components/common/Reviews.astro` | Activo | Carrusel de reseñas interactivo con soporte `astro:page-load`. |
 | **Reviews Action & Data** | `src/actions/reviews/`, `src/data/reviews/` | Activo | Acción `getReviews` y fuente local `reviews.json`. |
-| **Home Page** | `src/pages/[lang]/index.astro` | Activo | Página principal de bienvenida conectada con `site-example-content.json`. |
+| **Services Action & Data** | `src/actions/services/`, `src/data/services/` | Activo | Acciones `getServices`, `getServiceBySlug` y catálogo `services.data.json`. |
+| **Home Page** | `src/pages/[lang]/index.astro`, `src/components/home/` | Activo | Portada completa con 6 secciones visuales (Hero, Intro, Audience, Vision, Locations Map, Contact). |
+| **Shippers Page** | `src/pages/[lang]/shippers/index.astro`, `src/components/shippers/` | Activo | Catálogo interactivo de servicios a dos columnas (Sidebar sticky + Grid responsivo + Banner CTA). |
+| **Service Detail Page** | `src/pages/[lang]/services/[service]/index.astro`, `src/components/services/` | Activo | Ficha técnica de servicio dinámico con acordeón de capabilities, sidebar de navegación y reliability grid. |
+| **Contact Page** | `src/pages/[lang]/contact/index.astro`, `src/components/contact/` | Activo | Vista de contacto con números HQ, correos segmentados y mapa Google Maps interactivo. |
+| **Quote Request Page** | `src/pages/[lang]/quote/index.astro`, `src/components/quote/` | Activo | Formulario detallado de cotización de flete con preselección dinámica por query param `?service=slug`. |
 | **Error Handling** | `src/pages/404.astro` | Activo | Vista estándar 404 para rutas o idiomas inválidos. |
-| **Sitemap Dinámico** | `src/utils/seo/sitemapUrls.ts` | Activo | Inyección de URLs localizadas en `@astrojs/sitemap`. |
+| **Sitemap Dinámico** | `src/utils/seo/sitemapUrls.ts` | Activo | Inyección de URLs estáticas y dinámicas de servicios en `@astrojs/sitemap`. |
 | **Base de Datos (Extensible)** | `src/db/` | Configurado | Estructura base para conectar clientes ORM / SQL según se requiera. |
 
 ---
@@ -167,3 +172,6 @@ src/
 | Fecha | Identificador | Capa | Resumen del Cambio | Verificado Por |
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-10-26 | `#Init-AutoUI-Agents` | Sistema de Agentes | Reconfiguración completa del ecosistema multi-agente (`manager`, `coder`, `tester`), catálogo de skills (`create-data`, `create-action`, `create-component`, `create-page`), actualización de `MEMORY.md`, `AGENTS.md` y `CLAUDE.md` orientados al starter kit AutoUI (Astro, Tailwind CSS v4, i18n, Cloudflare). | Manager AutoUI |
+| 2026-11-02 | `#Task-Pages-ProCad` | Capa Completa (Data, Actions, Components, Pages) | Implementación integral de las nuevas vistas de ProCad Logistic (Home, Shippers, Services/[service], Contact, Quote), esquema dinámico de 6 servicios en `es`/`en`, Server Actions `getServices` y `getServiceBySlug`, y 17 secciones visuales Tailwind CSS v4. | Tester & Manager AutoUI |
+| 2026-11-02 | `#Task-About-Redirect` | Routing & Global Nav | Enlace 'ABOUT US' configurado directamente al Home (`/${lang}/`) y creación de ruta de redirección `src/pages/[lang]/about/index.astro`. | Manager AutoUI |
+| 2026-11-02 | `#Task-Hero-Layering` | Components (Hero) | Capa translúcida blanca sobre la imagen del tren y posicionamiento frontal del titular 'RELIABILITY, STARTS WITH US' y botón CTA cian. | Manager AutoUI |

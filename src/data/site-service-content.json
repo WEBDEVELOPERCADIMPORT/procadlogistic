@@ -1,0 +1,224 @@
+{
+  "es": {
+    "brandName": "ProCAD Logistic - Servicios Especializados",
+    "meta": {
+      "titleSuffix": "| Servicios de Carga ProCAD Logistic",
+      "defaultDescription": "Servicios de transporte de carga y logística especializada en Norteamérica con equipo certificado, monitoreo satelital continuo y tarifas competitivas."
+    },
+    "breadcrumb": {
+      "home": "Inicio",
+      "services": "Servicios"
+    },
+    "capabilitiesSection": {
+      "badge": "Capacidades del Servicio",
+      "title": "Modalidades y Equipos Disponibles",
+      "subtitle": "Configuraciones adaptadas con precisión a las dimensiones, peso y requerimientos térmicos o de manipulación de su mercancía."
+    },
+    "whyChooseSection": {
+      "badge": "Ventajas ProCAD",
+      "title": "¿Por Qué Confiar Este Servicio a ProCAD?",
+      "subtitle": "Garantizamos altos estándares de seguridad, trazabilidad y cumplimiento en cada entrega.",
+      "items": [
+        {
+          "id": "compliance",
+          "title": "Flota y Operadores Calificados",
+          "description": "Validación estricta de licencias federales, revisiones mecánicas periódicas y cobertura de seguro completa."
+        },
+        {
+          "id": "tracking",
+          "title": "Trazabilidad en Tiempo Real",
+          "description": "Geolocalización por satélite activa con notificaciones automáticas para usted y su cliente final."
+        },
+        {
+          "id": "flexibility",
+          "title": "Flexibilidad Operativa",
+          "description": "Capacidad de ajuste ante cambios de horario, desvíos de ruta autorizados y reprogramaciones de entrega."
+        },
+        {
+          "id": "rates",
+          "title": "Costos Transparentes",
+          "description": "Presupuestos formales sin cargos adicionales inesperados ni recargos por combustible ocultos."
+        }
+      ]
+    },
+    "processSection": {
+      "badge": "Flujo de Ejecución",
+      "title": "Paso a Paso de la Operación",
+      "subtitle": "Metodología comprobada que garantiza la integridad y puntualidad de su envío.",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Planificación y Reserva",
+          "description": "Confirmación de características de la carga, requerimientos especiales y asignación de la unidad ideal."
+        },
+        {
+          "step": 2,
+          "title": "Carga e Inspección Inicial",
+          "description": "Verificación física en punto de recolección, sellado de remolque y emisión del comprobante de embarque."
+        },
+        {
+          "step": 3,
+          "title": "Tránsito Seguro y Monitoreado",
+          "description": "Supervisión continúa desde nuestra torre de control con reportes periódicos de ubicación."
+        },
+        {
+          "step": 4,
+          "title": "Entrega Final y Cierre de Folio",
+          "description": "Revisión en destino, firma digital del comprobante de entrega (POD) y envío inmediato de la documentación."
+        }
+      ]
+    },
+    "faqSection": {
+      "badge": "Preguntas Frecuentes",
+      "title": "Resolvemos sus Dudas sobre el Servicio",
+      "subtitle": "Conozca los detalles operativos más relevantes antes de programar su envío.",
+      "items": [
+        {
+          "id": "lead_time",
+          "question": "¿Con cuánta anticipación debo solicitar una unidad?",
+          "answer": "Para servicios regulares recomendamos entre 24 y 48 horas de anticipación. Para servicios urgentes (expedited) podemos posicionar equipo en menos de 2 horas en las principales zonas industriales."
+        },
+        {
+          "id": "insurance",
+          "question": "¿La mercancía viaja asegurada durante todo el trayecto?",
+          "answer": "Sí, todos nuestros fletes cuentan con pólizas de seguro de carga de responsabilidad civil y de cobertura de mercancía a través de transportistas verificados y aseguradoras de primer nivel."
+        },
+        {
+          "id": "tracking_access",
+          "question": "¿Cómo puedo realizar el seguimiento de mi carga?",
+          "answer": "Proporcionamos un enlace de rastreo en vivo y enviamos actualizaciones periódicas por correo electrónico o SMS en cada hito del trayecto (recolección, tránsito y entrega)."
+        },
+        {
+          "id": "cross_border",
+          "question": "¿Ofrecen soporte para cruces fronterizos y aduanas?",
+          "answer": "Sí, coordinamos transferencias fronterizas y trabajamos estrechamente con sus agentes aduanales en los principales cruces entre EE. UU., México y Canadá."
+        }
+      ]
+    },
+    "otherServicesSection": {
+      "badge": "Explorar Más",
+      "title": "Otras Soluciones de Transporte",
+      "subtitle": "Descubra nuestra oferta complementaria para optimizar cada segmento de su logística.",
+      "viewDetails": "Conocer más"
+    },
+    "cta": {
+      "title": "¿Tiene una carga lista para este servicio?",
+      "subtitle": "Obtenga una tarifa competitiva hoy mismo con nuestro equipo de cotizaciones.",
+      "primaryBtn": "Solicitar Cotización",
+      "secondaryBtn": "Contactar un Asesor",
+      "quotePath": "quote",
+      "contactPath": "contact"
+    }
+  },
+  "en": {
+    "brandName": "ProCAD Logistic - Specialized Services",
+    "meta": {
+      "titleSuffix": "| ProCAD Logistic Freight Services",
+      "defaultDescription": "Specialized freight transportation and logistics solutions across North America with certified capacity, 24/7 telemetry tracking, and competitive rates."
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "services": "Services"
+    },
+    "capabilitiesSection": {
+      "badge": "Service Capabilities",
+      "title": "Available Equipment & Modalities",
+      "subtitle": "Equipment specifications engineered to match the exact dimensions, weight limits, and thermal requirements of your freight."
+    },
+    "whyChooseSection": {
+      "badge": "ProCAD Advantage",
+      "title": "Why Entrust This Service to ProCAD?",
+      "subtitle": "We uphold the highest benchmarks of safety, digital traceability, and execution on every single haul.",
+      "items": [
+        {
+          "id": "compliance",
+          "title": "Vetted Drivers & Equipment",
+          "description": "Exhaustive audits of motor carrier safety authority, recurring equipment inspections, and full cargo insurance."
+        },
+        {
+          "id": "tracking",
+          "title": "Real-Time Telemetry Tracking",
+          "description": "Continuous live satellite GPS feeds with automated milestone notifications delivered to you and your customer."
+        },
+        {
+          "id": "flexibility",
+          "title": "Operational Agility",
+          "description": "Rapid responsiveness to changing delivery appointment windows, authorized re-routes, and emergency rescheduling."
+        },
+        {
+          "id": "rates",
+          "title": "Transparent Cost Structure",
+          "description": "Formal upfront rate confirmations with zero surprise detention fees or hidden accessorial surcharges."
+        }
+      ]
+    },
+    "processSection": {
+      "badge": "Execution Workflow",
+      "title": "Step-by-Step Freight Operation",
+      "subtitle": "A proven operational standard that preserves the security and prompt delivery of your goods.",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Capacity Booking & Dispatch",
+          "description": "Confirm shipment specifications, accessorial equipment requirements, and dispatch the designated truck."
+        },
+        {
+          "step": 2,
+          "title": "On-Site Loading & Verification",
+          "description": "Origin physical inspection, proper trailer sealing, and execution of the bill of lading documentation."
+        },
+        {
+          "step": 3,
+          "title": "Monitored Line-Haul Transit",
+          "description": "Active journey supervision from our 24/7 central control tower with routine location updates."
+        },
+        {
+          "step": 4,
+          "title": "Final Delivery & POD Issuance",
+          "description": "Delivery inspection at destination, instant e-signature capture, and immediate digital POD delivery."
+        }
+      ]
+    },
+    "faqSection": {
+      "badge": "Frequently Asked Questions",
+      "title": "Answers to Your Key Freight Inquiries",
+      "subtitle": "Understand the essential operational details before scheduling your next shipment.",
+      "items": [
+        {
+          "id": "lead_time",
+          "question": "How much advance notice is required to book a truck?",
+          "answer": "For standard line-hauls, we suggest booking 24 to 48 hours in advance. For expedited emergency shipments, we can position dedicated equipment within 2 hours across key industrial corridors."
+        },
+        {
+          "id": "insurance",
+          "question": "Is freight fully insured during transit?",
+          "answer": "Yes, every load is protected by verified motor carrier cargo liability insurance policies underwritten by premier commercial transportation insurers."
+        },
+        {
+          "id": "tracking_access",
+          "question": "How can I follow the progress of my load?",
+          "answer": "We provide live GPS tracking links and dispatch proactive status updates via email or SMS across each journey milestone (dispatch, loaded, in transit, delivered)."
+        },
+        {
+          "id": "cross_border",
+          "question": "Do you handle cross-border customs coordination?",
+          "answer": "Yes, we handle border drayage and work hand-in-hand with your certified customs brokers at major border ports between the US, Mexico, and Canada."
+        }
+      ]
+    },
+    "otherServicesSection": {
+      "badge": "Explore Further",
+      "title": "Additional Transportation Solutions",
+      "subtitle": "Discover complementary freight services to optimize every leg of your logistics network.",
+      "viewDetails": "Learn more"
+    },
+    "cta": {
+      "title": "Have freight ready for this service?",
+      "subtitle": "Get a competitive rate today from our experienced pricing specialists.",
+      "primaryBtn": "Request a Quote",
+      "secondaryBtn": "Talk to an Expert",
+      "quotePath": "quote",
+      "contactPath": "contact"
+    }
+  }
+}

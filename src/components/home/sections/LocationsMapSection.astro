@@ -1,0 +1,62 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const title = lang === 'es' ? 'UBICACIONES DE OFICINAS' : 'OFFICE LOCATIONS';
+
+const officeLines = [
+  'Atlanta | Birmingham | Buffalo',
+  'Chattanooga | Denver | Fort Worth | Gainesville',
+  'Indianapolis (HQ) | Jackson | Kansas City',
+  'Nashville | Omaha | Scottsdale',
+];
+---
+
+<section class="w-full bg-white py-20 lg:py-28 text-neutral-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Map Graphic -->
+      <div class="lg:col-span-6 flex justify-center">
+        <div class="w-full max-w-xl">
+          <img
+            src="/images/home/usa-map.png"
+            alt="Office Locations Nationwide Map"
+            class="w-full h-auto object-contain"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Right Column: OFFICE LOCATIONS List with | dividers -->
+      <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-neutral-900">
+          {title}
+        </h2>
+
+        <div class="space-y-4 pt-2">
+          {officeLines.map((line) => (
+            <p class="text-sm sm:text-base font-bold text-neutral-700 tracking-wide">
+              {line}
+            </p>
+          ))}
+        </div>
+
+        <div class="pt-6">
+          <a
+            href={`/${lang}/contact`}
+            class="inline-block bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 rounded-none transition-colors"
+          >
+            {lang === 'es' ? 'CONTACTAR UNA OFICINA' : 'CONTACT A BRANCH'}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

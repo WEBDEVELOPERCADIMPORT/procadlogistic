@@ -1,0 +1,106 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const callTitle = lang === 'es' ? '¡Llámenos!' : 'Give us a call!';
+const emailTitle = lang === 'es' ? '¡Escríbanos un correo!' : 'Email us!';
+---
+
+<section class="w-full bg-white py-16 sm:py-24 text-neutral-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left Column: Call Us & Email Us -->
+      <div class="lg:col-span-5 space-y-10">
+        
+        <!-- Give us a call! -->
+        <div class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#00aeef]">
+            {callTitle}
+          </h2>
+          <div class="space-y-2 text-sm text-neutral-700">
+            <p class="font-bold text-neutral-900">
+              {lang === 'es' ? 'Oficina Central (HQ):' : 'Corporate Headquarters (HQ):'}
+            </p>
+            <p>
+              <span class="font-semibold text-neutral-900">Direct:</span>{' '}
+              <a href="tel:3174750960" class="hover:text-[#00aeef] transition-colors">317.475.0960</a>
+            </p>
+            <p>
+              <span class="font-semibold text-neutral-900">Toll Free:</span>{' '}
+              <a href="tel:8005550199" class="hover:text-[#00aeef] transition-colors">800.555.0199</a>
+            </p>
+            <p class="text-xs text-neutral-500 pt-1">
+              {lang === 'es' ? 'Despacho activo las 24 horas del día, los 365 días del año.' : 'Active dispatch & operations 24/7/365.'}
+            </p>
+          </div>
+        </div>
+
+        <!-- Email us! -->
+        <div class="space-y-4 pt-6 border-t border-gray-200">
+          <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-[#00aeef]">
+            {emailTitle}
+          </h2>
+          <div class="space-y-3 text-sm text-neutral-700">
+            <div>
+              <p class="font-bold text-neutral-900 text-xs uppercase tracking-wider">
+                {lang === 'es' ? 'Cotizaciones y Ventas:' : 'Quotes & Shippers:'}
+              </p>
+              <a href="mailto:quotes@procadlogistic.com" class="text-neutral-700 hover:text-[#00aeef] transition-colors">
+                quotes@procadlogistic.com
+              </a>
+            </div>
+
+            <div>
+              <p class="font-bold text-neutral-900 text-xs uppercase tracking-wider">
+                {lang === 'es' ? 'Red de Transportistas & QuickPay:' : 'Carrier Relations & QuickPay:'}
+              </p>
+              <a href="mailto:carriers@procadlogistic.com" class="text-neutral-700 hover:text-[#00aeef] transition-colors">
+                carriers@procadlogistic.com
+              </a>
+            </div>
+
+            <div>
+              <p class="font-bold text-neutral-900 text-xs uppercase tracking-wider">
+                {lang === 'es' ? 'Información General & Mercadotecnia:' : 'General Inquiries & Marketing:'}
+              </p>
+              <a href="mailto:marketing@procadlogistic.com" class="text-neutral-700 hover:text-[#00aeef] transition-colors">
+                marketing@procadlogistic.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Address Badge -->
+        <div class="p-4 bg-gray-50 border border-gray-200 text-xs text-neutral-600 space-y-1">
+          <p class="font-bold text-neutral-900 uppercase">ProCAD Logistic LLC</p>
+          <p>950 Dorman Street, Indianapolis, IN, 46202, United States</p>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Responsive Google Map Embed -->
+      <div class="lg:col-span-7">
+        <div class="w-full h-96 sm:h-[480px] bg-gray-100 border border-gray-300 overflow-hidden shadow-xs">
+          <iframe
+            title="ProCAD Logistic Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3066.273618366115!2d-86.13674692348577!3d39.77840139425026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886b50e32b4bfa2b%3A0xb5b796d11f8e658!2s950%20Dorman%20St%2C%20Indianapolis%2C%20IN%2046202!5e0!3m2!1sen!2sus!4v1716000000000!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full grayscale-[20%]"
+          ></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+---
+import { LANGUAGES, type Lang } from '../../../i18n/config.i18n';
+
+const lang = Astro.params.lang as Lang;
+
+// Validar idioma soportado
+if (!(lang in LANGUAGES)) {
+  return Astro.redirect('/404');
+}
+
+// Redireccionar al Home ya que About Us es el Home principal
+return Astro.redirect(`/${lang}/`);
+---

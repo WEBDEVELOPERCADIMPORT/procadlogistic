@@ -1,0 +1,61 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const titleLine1 = lang === 'es' ? 'NUESTRA VISIÓN.' : 'OUR VISION.';
+const titleLine2 = lang === 'es' ? 'SU FUTURO.' : 'YOUR FUTURE.';
+const ctaLabel = lang === 'es' ? 'CONOZCA MÁS' : 'LEARN MORE';
+---
+
+<section class="w-full bg-[#f8f9fa] py-20 lg:py-28 text-neutral-900 border-t border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Bold Typography & CTA -->
+      <div class="lg:col-span-6 space-y-6">
+        <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-neutral-900 leading-none">
+          <span>{titleLine1}</span>
+          <br />
+          <span class="text-[#00aeef]">{titleLine2}</span>
+        </h2>
+
+        {lang === 'es' ? (
+          <p class="text-base text-neutral-700 leading-relaxed max-w-xl">
+            ProCAD Logistic está transformando el panorama del corretaje de transporte mediante la inversión continua en infraestructura tecnológica de clase mundial, una red calificada de transportistas y profesionales apasionados comprometidos con la puntualidad de su cadena de valor.
+          </p>
+        ) : (
+          <p class="text-base text-neutral-700 leading-relaxed max-w-xl">
+            ProCAD Logistic is redefining freight transportation through continuous investment in advanced logistics technology, audited carrier partnerships, and a dedicated team committed to total supply chain reliability.
+          </p>
+        )}
+
+        <div class="pt-2">
+          <a
+            href={`/${lang}/`}
+            class="inline-block bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 rounded-none transition-colors"
+          >
+            {ctaLabel}
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Operations Center Photograph -->
+      <div class="lg:col-span-6">
+        <div class="relative overflow-hidden bg-gray-200 shadow-lg">
+          <img
+            src="/images/home/operations-center.png"
+            alt="ProCAD Logistics Control Room"
+            class="w-full h-80 sm:h-96 object-cover object-center"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,202 @@
+{
+  "es": {
+    "brandName": "ProCAD Logistic - Contacto y Soporte",
+    "meta": {
+      "title": "Contacto y Atención a Clientes | ProCAD Logistic",
+      "description": "Comuníquese con el equipo de ProCAD Logistic. Soporte de operaciones 24/7, consultas de servicio, asesoría en fletes y atención a cargadores y transportistas."
+    },
+    "hero": {
+      "badge": "Estamos a su Disposición",
+      "title": "Conecte con Nuestros Especialistas en Transporte",
+      "subtitle": "¿Tiene dudas operativas, requiere cotizar una ruta urgente o desea integrar a ProCAD Logistic como su aliado 3PL? Estamos disponibles para asistirle las 24 horas del día."
+    },
+    "contactInfo": {
+      "badge": "Atención Inmediata",
+      "title": "Canales Directos de Comunicación",
+      "subtitle": "Elija la forma más conveniente de comunicarse con nuestros despachadores y asesores comerciales.",
+      "phone": {
+        "label": "Teléfono de Operaciones",
+        "value": "+1 (800) 555-0199",
+        "href": "tel:+18005550199"
+      },
+      "email": {
+        "label": "Correo Electrónico",
+        "value": "info@procadlogistic.com",
+        "href": "mailto:info@procadlogistic.com"
+      },
+      "address": {
+        "label": "Oficina Central",
+        "value": "1200 Logistics Boulevard, Suite 400",
+        "details": "Laredo, TX 78045, Estados Unidos"
+      },
+      "hours": {
+        "label": "Horarios de Operación",
+        "value": "Despacho y Monitoreo: 24/7/365",
+        "details": "Atención Administrativa: Lun - Vie: 8:00 AM - 6:00 PM CST"
+      }
+    },
+    "form": {
+      "badge": "Envíenos un Mensaje",
+      "title": "Formulario de Contacto Directo",
+      "subtitle": "Complete sus datos y un coordinador de transporte responderá a su requerimiento en menos de 30 minutos.",
+      "nameLabel": "Nombre Completo",
+      "namePlaceholder": "Ej. Carlos Mendoza",
+      "emailLabel": "Correo Corporativo",
+      "emailPlaceholder": "carlos@empresa.com",
+      "phoneLabel": "Teléfono de Contacto",
+      "phonePlaceholder": "+1 (555) 000-0000",
+      "companyLabel": "Nombre de la Empresa",
+      "companyPlaceholder": "Nombre de su compañía o razón social",
+      "subjectLabel": "Asunto",
+      "subjectPlaceholder": "¿Cómo podemos ayudarle?",
+      "serviceInterestLabel": "Servicio de Interés",
+      "serviceOptions": [
+        { "value": "full-truckload", "label": "Carga Completa (FTL)" },
+        { "value": "less-than-truckload", "label": "Carga Parcial (LTL)" },
+        { "value": "expedited", "label": "Envío Urgente (Expedited)" },
+        { "value": "over-dimensional", "label": "Carga Sobredimensionada" },
+        { "value": "drayage", "label": "Transporte Portuario y Ferroviario" },
+        { "value": "managed-transportation", "label": "Transporte Gestionado (3PL)" },
+        { "value": "other", "label": "Otro Requerimiento / Consulta General" }
+      ],
+      "messageLabel": "Detalles del Mensaje",
+      "messagePlaceholder": "Indique cualquier detalle adicional sobre su consulta, volumen estimado o rutas requeridas...",
+      "submitButton": "Enviar Mensaje",
+      "submittingButton": "Enviando...",
+      "successTitle": "¡Mensaje Enviado con Éxito!",
+      "successMessage": "Hemos recibido su mensaje correctamente. Un asesor de ProCAD Logistic se pondrá en contacto a la brevedad.",
+      "errorMessage": "Ocurrió un error al enviar el formulario. Por favor intente de nuevo o llámenos directamente."
+    },
+    "locations": {
+      "badge": "Presencia Estratégica",
+      "title": "Centros Operativos y Patios de Enlace",
+      "subtitle": "Puntos de control ubicados en las principales arterias de intercambio comercial internacional.",
+      "items": [
+        {
+          "id": "hub-laredo",
+          "city": "Laredo, Texas",
+          "region": "Frontera Sur & Cruce Internacional",
+          "address": "1200 Logistics Boulevard, Suite 400, Laredo, TX 78045",
+          "phone": "+1 (956) 555-0142",
+          "email": "laredo@procadlogistic.com"
+        },
+        {
+          "id": "hub-chicago",
+          "city": "Chicago, Illinois",
+          "region": "Centro de Distribución Midwest",
+          "address": "4500 Terminal Road, Suite 210, Chicago, IL 60638",
+          "phone": "+1 (312) 555-0188",
+          "email": "chicago@procadlogistic.com"
+        },
+        {
+          "id": "hub-monterrey",
+          "city": "Monterrey, Nuevo León",
+          "region": "Corredor Industrial del Norte de México",
+          "address": "Av. Parque Industrial 500, Apodaca, NL 66600",
+          "phone": "+52 (81) 8555-0120",
+          "email": "monterrey@procadlogistic.com"
+        }
+      ]
+    }
+  },
+  "en": {
+    "brandName": "ProCAD Logistic - Contact & Support",
+    "meta": {
+      "title": "Contact Us & Customer Support | ProCAD Logistic",
+      "description": "Get in touch with the ProCAD Logistic team. 24/7 active dispatch support, freight rate inquiries, and dedicated services for shippers and commercial carriers."
+    },
+    "hero": {
+      "badge": "At Your Service",
+      "title": "Connect with Our Freight Logistics Specialists",
+      "subtitle": "Have operational questions, need an urgent spot quote, or want to explore integrating ProCAD Logistic as your preferred 3PL partner? We are available 24 hours a day."
+    },
+    "contactInfo": {
+      "badge": "Immediate Assistance",
+      "title": "Direct Communication Channels",
+      "subtitle": "Choose the most convenient way to reach our live dispatchers and freight account managers.",
+      "phone": {
+        "label": "Operations Hotline",
+        "value": "+1 (800) 555-0199",
+        "href": "tel:+18005550199"
+      },
+      "email": {
+        "label": "Corporate Email",
+        "value": "info@procadlogistic.com",
+        "href": "mailto:info@procadlogistic.com"
+      },
+      "address": {
+        "label": "Corporate Headquarters",
+        "value": "1200 Logistics Boulevard, Suite 400",
+        "details": "Laredo, TX 78045, United States"
+      },
+      "hours": {
+        "label": "Operating Hours",
+        "value": "Dispatch & Fleet Tracking: 24/7/365",
+        "details": "Administrative Support: Mon - Fri: 8:00 AM - 6:00 PM CST"
+      }
+    },
+    "form": {
+      "badge": "Send Us a Message",
+      "title": "Direct Contact Inquiry Form",
+      "subtitle": "Provide your details below and an experienced transportation coordinator will respond within 30 minutes.",
+      "nameLabel": "Full Name",
+      "namePlaceholder": "e.g. John Miller",
+      "emailLabel": "Corporate Email",
+      "emailPlaceholder": "john@company.com",
+      "phoneLabel": "Phone Number",
+      "phonePlaceholder": "+1 (555) 000-0000",
+      "companyLabel": "Company Name",
+      "companyPlaceholder": "Your corporate or business name",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "How can our team help you?",
+      "serviceInterestLabel": "Primary Service of Interest",
+      "serviceOptions": [
+        { "value": "full-truckload", "label": "Full Truckload (FTL)" },
+        { "value": "less-than-truckload", "label": "Less Than Truckload (LTL)" },
+        { "value": "expedited", "label": "Expedited / Urgent Delivery" },
+        { "value": "over-dimensional", "label": "Over-Dimensional & Heavy Haul" },
+        { "value": "drayage", "label": "Port & Rail Intermodal Drayage" },
+        { "value": "managed-transportation", "label": "Managed Transportation (3PL)" },
+        { "value": "other", "label": "Other Inquiry / General Consultation" }
+      ],
+      "messageLabel": "Message Details",
+      "messagePlaceholder": "Include any pertinent details regarding your freight, lane volume, or scheduling requirements...",
+      "submitButton": "Send Message",
+      "submittingButton": "Sending...",
+      "successTitle": "Message Delivered Successfully!",
+      "successMessage": "We have received your inquiry. A ProCAD Logistic freight advisor will contact you promptly.",
+      "errorMessage": "An error occurred while transmitting your request. Please try again or give us a direct call."
+    },
+    "locations": {
+      "badge": "Strategic Presence",
+      "title": "Operating Hubs & Terminal Facilities",
+      "subtitle": "Strategically positioned control centers alongside premier North American trade and distribution corridors.",
+      "items": [
+        {
+          "id": "hub-laredo",
+          "city": "Laredo, Texas",
+          "region": "Southern Border & Cross-Border Gateway",
+          "address": "1200 Logistics Boulevard, Suite 400, Laredo, TX 78045",
+          "phone": "+1 (956) 555-0142",
+          "email": "laredo@procadlogistic.com"
+        },
+        {
+          "id": "hub-chicago",
+          "city": "Chicago, Illinois",
+          "region": "Midwest Multi-Modal Rail Terminal",
+          "address": "4500 Terminal Road, Suite 210, Chicago, IL 60638",
+          "phone": "+1 (312) 555-0188",
+          "email": "chicago@procadlogistic.com"
+        },
+        {
+          "id": "hub-monterrey",
+          "city": "Monterrey, Nuevo Leon",
+          "region": "Northern Mexico Industrial Belt",
+          "address": "Av. Parque Industrial 500, Apodaca, NL 66600",
+          "phone": "+52 (81) 8555-0120",
+          "email": "monterrey@procadlogistic.com"
+        }
+      ]
+    }
+  }
+}

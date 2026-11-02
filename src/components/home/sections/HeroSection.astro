@@ -1,0 +1,49 @@
+---
+import type { Lang } from "../../../i18n/config.i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const titleLine1 = lang === "es" ? "LA CONFIABILIDAD," : "RELIABILITY,";
+const titleLine2 = lang === "es" ? "COMIENZA CON NOSOTROS." : "STARTS WITH US.";
+const ctaLabel = lang === "es" ? "SOLICITAR COTIZACIÓN" : "REQUEST A QUOTE";
+---
+
+<section
+  class="relative w-full min-h-[500px] sm:min-h-[600px] lg:min-h-[75vh] flex items-center justify-center overflow-hidden bg-neutral-100"
+>
+  <!-- 1. Background Train Image -->
+  <img
+    src="/images/home/hero-train.png"
+    alt="ProCAD Freight Train Intermodal"
+    class="absolute inset-0 w-full h-full object-cover object-center z-0"
+    loading="eager"
+  />
+
+  <!-- 2. Translucent White Overlay Layer in front of image for readability -->
+  <div class="absolute inset-0 bg-white/30 backdrop-blur-[0.5px] z-1"></div>
+
+  <!-- 3. Headline & CTA Button in front of everything -->
+  <div
+    class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center justify-center"
+  >
+    <h1
+      class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.05] drop-shadow-sm"
+    >
+      <span class="block font-black">{titleLine1}</span>
+      <span class="block">{titleLine2}</span>
+    </h1>
+
+    <div class="mt-8 sm:mt-10">
+      <a
+        href={`/${lang}/quote`}
+        class="inline-block bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs sm:text-sm font-black uppercase tracking-widest px-10 sm:px-12 py-4 transition-all duration-200 rounded-none shadow-xl hover:shadow-[#00aeef]/30 hover:scale-[1.02]"
+      >
+        {ctaLabel}
+      </a>
+    </div>
+  </div>
+</section>

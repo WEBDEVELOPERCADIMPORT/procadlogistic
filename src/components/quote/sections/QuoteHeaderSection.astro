@@ -1,0 +1,45 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+import type { ServiceItem } from '../../../actions/services/services.action';
+import defaultServicesData from '../../../data/services/services.data.json';
+
+interface Props {
+  lang: Lang;
+  service?: ServiceItem;
+}
+
+const { lang, service } = Astro.props;
+
+const currentService = service ?? (defaultServicesData.services[0] as ServiceItem);
+const serviceTitle = currentService.title[lang] ?? currentService.title.es;
+const serviceDescription = currentService.description[lang] ?? currentService.description.es;
+---
+
+<section class="w-full bg-white pt-14 pb-10 text-neutral-900 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    
+    <!-- Cyan Service Title -->
+    <h1 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#00aeef]">
+      {serviceTitle}
+    </h1>
+
+    <!-- 2 Columns: Equipment Thumbnail Photo (Left) + Description (Right) -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div class="md:col-span-4 bg-gray-100 border border-gray-200 overflow-hidden shadow-xs">
+        <img
+          src={currentService.image}
+          alt={serviceTitle}
+          class="w-full h-auto object-cover"
+          loading="eager"
+        />
+      </div>
+
+      <div class="md:col-span-8 space-y-4">
+        <p class="text-base text-neutral-700 leading-relaxed font-normal">
+          {serviceDescription}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>

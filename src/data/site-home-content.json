@@ -1,0 +1,278 @@
+{
+  "es": {
+    "brandName": "ProCAD Logistic - Soluciones de Transporte y Carga Confiable",
+    "meta": {
+      "title": "ProCAD Logistic | Transporte de Carga Terrestre y Logística en Norteamérica",
+      "description": "Servicios integrales de transporte de carga completa (FTL), carga parcial (LTL), envíos urgentes, sobredimensionados y drayage con cobertura en EE. UU., México y Canadá."
+    },
+    "hero": {
+      "badge": "Logística Inteligente y Confiable",
+      "title": "Movilizamos su carga con precisión, seguridad y tecnología avanzada",
+      "subtitle": "Conectamos cadenas de suministro a través de una red de transporte robusta, monitoreo satelital en tiempo real y soluciones logísticas personalizadas para su empresa.",
+      "ctaPrimary": {
+        "label": "Cotizar un Envío",
+        "path": "quote"
+      },
+      "ctaSecondary": {
+        "label": "Nuestros Servicios",
+        "path": "shippers"
+      },
+      "highlights": [
+        {
+          "id": "ontime",
+          "title": "99.4%",
+          "subtitle": "Puntualidad en Entregas"
+        },
+        {
+          "id": "coverage",
+          "title": "50 Estados y Fronteras",
+          "subtitle": "Cobertura Continental"
+        },
+        {
+          "id": "support",
+          "title": "24/7/365",
+          "subtitle": "Monitoreo y Despacho Activo"
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "id": "loads",
+          "value": "+250,000",
+          "label": "Cargas Entregadas con Éxito"
+        },
+        {
+          "id": "carriers",
+          "value": "+15,000",
+          "label": "Transportistas Certificados"
+        },
+        {
+          "id": "ontime_rate",
+          "value": "99.4%",
+          "label": "Índice de Puntualidad"
+        },
+        {
+          "id": "experience",
+          "value": "+15 Años",
+          "label": "Experiencia en el Sector"
+        }
+      ]
+    },
+    "services": {
+      "badge": "Servicios Especializados",
+      "title": "Soluciones de Transporte Diseñadas para su Operación",
+      "subtitle": "Desde remolques completos dedicados hasta fletes urgentes y maniobras portuarias complejas, tenemos la capacidad que su negocio necesita.",
+      "ctaText": "Ver Detalle del Servicio"
+    },
+    "shippersCta": {
+      "badge": "Para Cargadores",
+      "title": "¿Tiene carga que mover con urgencia o volumen programado?",
+      "description": "Simplifique su logística con asignación inmediata de equipo, tarifas transparentes y visibilidad continua de principio a fin.",
+      "ctaText": "Soluciones para Cargadores",
+      "ctaPath": "shippers"
+    },
+    "whyUs": {
+      "badge": "¿Por Qué ProCAD?",
+      "title": "La Diferencia de Operar con Profesionales",
+      "subtitle": "Combinamos infraestructura, tecnología de punta y un equipo dedicado de expertos para ofrecer certidumbre en cada milla.",
+      "items": [
+        {
+          "id": "capacity",
+          "icon": "shield-check",
+          "title": "Capacidad Garantizada",
+          "description": "Acceso constante a equipo disponible incluso en temporadas de alta demanda y rutas congestionadas."
+        },
+        {
+          "id": "tracking",
+          "icon": "satellite",
+          "title": "Visibilidad y Rastreo GPS",
+          "description": "Monitoreo en tiempo real con actualizaciones automáticas y comunicación proactiva de hitos de entrega."
+        },
+        {
+          "id": "compliance",
+          "icon": "file-check",
+          "title": "Seguridad y Certificación Estricta",
+          "description": "Verificación rigurosa de historial de seguridad, seguros vigentes y licencias de cada transportista."
+        },
+        {
+          "id": "support",
+          "icon": "headphones",
+          "title": "Gestores de Cuenta Dedicados",
+          "description": "Atención personalizada las 24 horas por un equipo que conoce sus necesidades operativas a profundidad."
+        }
+      ]
+    },
+    "technology": {
+      "badge": "Tecnología Logística",
+      "title": "Visibilidad de Extremo a Extremo en su Cadena de Suministro",
+      "subtitle": "Nuestra plataforma digital le permite gestionar cotizaciones, rastrear unidades y descargar pruebas de entrega en segundos.",
+      "items": [
+        {
+          "id": "realtime_eta",
+          "title": "Cálculo Dinámico de Llegada (ETA)",
+          "description": "Algoritmos predictivos que evalúan clima, tráfico y tiempos de descanso para anticipar llegadas exactas."
+        },
+        {
+          "id": "digital_pod",
+          "title": "Comprobantes Digitales (e-POD)",
+          "description": "Acceso instantáneo a conocimientos de embarque y firmas de recepción digitalizadas."
+        },
+        {
+          "id": "api_integration",
+          "title": "Integración con su TMS/ERP",
+          "description": "Conectividad transparente vía API y EDI para sincronizar órdenes sin trabajo manual."
+        }
+      ]
+    },
+    "testimonials": {
+      "badge": "Testimonios",
+      "title": "Lo Que Dicen Quienes Confían en Nosotros",
+      "subtitle": "Empresas líderes en manufactura, comercio minorista y agroindustria confían su carga a ProCAD Logistic."
+    },
+    "cta": {
+      "title": "¿Listo para optimizar el transporte de su empresa?",
+      "subtitle": "Solicite una cotización en minutos o hable directamente con uno de nuestros especialistas logísticos.",
+      "ctaText": "Solicitar Cotización Ahora",
+      "ctaPath": "quote"
+    }
+  },
+  "en": {
+    "brandName": "ProCAD Logistic - Reliable Freight Transportation Solutions",
+    "meta": {
+      "title": "ProCAD Logistic | Freight Transportation & Logistics in North America",
+      "description": "Comprehensive full truckload (FTL), less-than-truckload (LTL), expedited, heavy haul, and drayage freight solutions across the United States, Mexico, and Canada."
+    },
+    "hero": {
+      "badge": "Intelligent & Reliable Logistics",
+      "title": "Moving your freight with precision, security, and advanced technology",
+      "subtitle": "Connecting supply chains through a resilient transportation network, 24/7 real-time satellite tracking, and tailored logistics solutions built around your business.",
+      "ctaPrimary": {
+        "label": "Get a Shipping Quote",
+        "path": "quote"
+      },
+      "ctaSecondary": {
+        "label": "Our Services",
+        "path": "shippers"
+      },
+      "highlights": [
+        {
+          "id": "ontime",
+          "title": "99.4%",
+          "subtitle": "On-Time Delivery Rate"
+        },
+        {
+          "id": "coverage",
+          "title": "50 States & Borders",
+          "subtitle": "Continental Network"
+        },
+        {
+          "id": "support",
+          "title": "24/7/365",
+          "subtitle": "Active Dispatch & Tracking"
+        }
+      ]
+    },
+    "stats": {
+      "items": [
+        {
+          "id": "loads",
+          "value": "+250,000",
+          "label": "Successfully Delivered Loads"
+        },
+        {
+          "id": "carriers",
+          "value": "+15,000",
+          "label": "Vetted Carrier Partners"
+        },
+        {
+          "id": "ontime_rate",
+          "value": "99.4%",
+          "label": "On-Time Performance Rate"
+        },
+        {
+          "id": "experience",
+          "value": "+15 Years",
+          "label": "Industry Experience"
+        }
+      ]
+    },
+    "services": {
+      "badge": "Specialized Services",
+      "title": "Transportation Solutions Engineered for Your Operations",
+      "subtitle": "From dedicated full trailers to urgent expedited shipments and complex port intermodal moves, we deliver the capacity your business demands.",
+      "ctaText": "View Service Details"
+    },
+    "shippersCta": {
+      "badge": "For Shippers",
+      "title": "Have freight requiring immediate capacity or recurring line-hauls?",
+      "description": "Streamline your shipping operations with rapid equipment dispatch, transparent pricing, and end-to-end milestone visibility.",
+      "ctaText": "Shipper Solutions",
+      "ctaPath": "shippers"
+    },
+    "whyUs": {
+      "badge": "Why ProCAD?",
+      "title": "The Advantage of Operating with Professionals",
+      "subtitle": "We integrate physical infrastructure, cutting-edge technology, and dedicated logistics specialists to guarantee certainty on every single lane.",
+      "items": [
+        {
+          "id": "capacity",
+          "icon": "shield-check",
+          "title": "Guaranteed Capacity",
+          "description": "Consistent access to ready equipment even during seasonal demand spikes and constrained market lanes."
+        },
+        {
+          "id": "tracking",
+          "icon": "satellite",
+          "title": "Real-Time GPS Visibility",
+          "description": "Continuous live tracking with automated milestone notices and proactive status exception communication."
+        },
+        {
+          "id": "compliance",
+          "icon": "file-check",
+          "title": "Rigorous Safety Compliance",
+          "description": "Exhaustive qualification protocols verifying safety performance scores, active insurance, and operating authority."
+        },
+        {
+          "id": "support",
+          "icon": "headphones",
+          "title": "Dedicated Account Managers",
+          "description": "Round-the-clock dedicated account representatives who understand your operational workflows and priorities."
+        }
+      ]
+    },
+    "technology": {
+      "badge": "Logistics Technology",
+      "title": "End-to-End Visibility Across Your Entire Supply Chain",
+      "subtitle": "Our modern digital platform empowers you to generate quotes, monitor live equipment, and retrieve signed proof of delivery within seconds.",
+      "items": [
+        {
+          "id": "realtime_eta",
+          "title": "Dynamic Predictive ETAs",
+          "description": "Predictive routing engines factoring weather forecasts, highway congestion, and driver hours of service."
+        },
+        {
+          "id": "digital_pod",
+          "title": "Digital Proof of Delivery (e-POD)",
+          "description": "Instant cloud retrieval of stamped bills of lading and recipient signatures upon drop-off."
+        },
+        {
+          "id": "api_integration",
+          "title": "Seamless TMS & ERP Integration",
+          "description": "Frictionless API and EDI connectivity to synchronize orders and load milestones without manual entry."
+        }
+      ]
+    },
+    "testimonials": {
+      "badge": "Testimonials",
+      "title": "What Our Valued Partners Say",
+      "subtitle": "Leading manufacturers, consumer retailers, and agricultural producers rely on ProCAD Logistic daily."
+    },
+    "cta": {
+      "title": "Ready to optimize your freight transportation?",
+      "subtitle": "Request an instant quote in minutes or consult directly with one of our specialized freight strategists.",
+      "ctaText": "Request a Quote Now",
+      "ctaPath": "quote"
+    }
+  }
+}

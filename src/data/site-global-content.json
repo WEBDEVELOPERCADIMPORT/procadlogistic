@@ -1,50 +1,164 @@
 {
-    "es": {
-        "nav": [
-            {
-                "id": "home",
-                "label": "Inicio",
-                "path": ""
-            },
-            {
-                "id": "about",
-                "label": "Nosotros",
-                "path": "about",
-                "chilndren": [
-                    {
-                        "id": "futuro",
-                        "label": "Futuro",
-                        "path": "futuro"
-                    }
-                ]
-            }
-        ],
-        "footer": {
-            "rights": "Todos los derechos reservados."
-        }
+  "es": {
+    "nav": [
+      {
+        "id": "about",
+        "label": "SOBRE NOSOTROS",
+        "path": ""
+      },
+      {
+        "id": "shippers",
+        "label": "CARGADORES",
+        "path": "shippers"
+      },
+      {
+        "id": "contact",
+        "label": "CONTACTO",
+        "path": "contact"
+      }
+    ],
+    "navbar": {
+      "quoteCta": {
+        "label": "COTIZAR AHORA",
+        "path": "quote"
+      }
     },
-    "en": {
-        "nav": [
-            {
-                "id": "home",
-                "label": "Home",
-                "path": ""
-            },
-            {
-                "id": "about",
-                "label": "About Us",
-                "path": "about",
-                "chilndren": [
-                    {
-                        "id": "future",
-                        "label": "Future Us",
-                        "path": "Future"
-                    }
-                ]
-            }
-        ],
-        "footer": {
-            "rights": "All rights reserved."
+    "footer": {
+      "companyName": "ProCAD Logistic",
+      "tagline": "Soluciones logísticas integrales y transporte de carga confiable en toda América del Norte.",
+      "rights": "Todos los derechos reservados.",
+      "copyright": "© 2026 ProCAD Logistic. Todos los derechos reservados.",
+      "legalText": "ProCAD Logistic LLC es una agencia de transporte de carga y proveedor logístico 3PL debidamente certificado y asegurado. Todos los servicios de flete y corretaje se rigen por nuestros términos operativos y el marco regulatorio de transporte de carga aplicable.",
+      "socialLinks": [
+        {
+          "name": "LinkedIn",
+          "url": "https://www.linkedin.com/company/procadlogistic",
+          "icon": "linkedin"
+        },
+        {
+          "name": "Email",
+          "url": "mailto:info@procadlogistic.com",
+          "icon": "email"
+        },
+        {
+          "name": "Instagram",
+          "url": "https://www.instagram.com/procadlogistic",
+          "icon": "instagram"
+        },
+        {
+          "name": "Facebook",
+          "url": "https://www.facebook.com/procadlogistic",
+          "icon": "facebook"
+        },
+        {
+          "name": "YouTube",
+          "url": "https://www.youtube.com/@procadlogistic",
+          "icon": "youtube"
         }
+      ],
+      "links": [
+        {
+          "id": "careers",
+          "label": "CARRERAS",
+          "path": "careers"
+        },
+        {
+          "id": "dash",
+          "label": "DASH",
+          "path": "dash"
+        },
+        {
+          "id": "contact",
+          "label": "CONTACTO",
+          "path": "contact"
+        },
+        {
+          "id": "terms",
+          "label": "TÉRMINOS Y CONDICIONES",
+          "path": "terms"
+        }
+      ]
     }
+  },
+  "en": {
+    "nav": [
+      {
+        "id": "about",
+        "label": "ABOUT US",
+        "path": ""
+      },
+      {
+        "id": "shippers",
+        "label": "SHIPPERS",
+        "path": "shippers"
+      },
+      {
+        "id": "contact",
+        "label": "CONTACT",
+        "path": "contact"
+      }
+    ],
+    "navbar": {
+      "quoteCta": {
+        "label": "GET A QUOTE",
+        "path": "quote"
+      }
+    },
+    "footer": {
+      "companyName": "ProCAD Logistic",
+      "tagline": "Comprehensive logistics solutions and reliable freight transportation across North America.",
+      "rights": "All rights reserved.",
+      "copyright": "© 2026 ProCAD Logistic. All rights reserved.",
+      "legalText": "ProCAD Logistic LLC is a licensed and fully insured freight brokerage and third-party logistics (3PL) provider. All shipping services and brokerage operations are governed by our standard terms and applicable freight regulations.",
+      "socialLinks": [
+        {
+          "name": "LinkedIn",
+          "url": "https://www.linkedin.com/company/procadlogistic",
+          "icon": "linkedin"
+        },
+        {
+          "name": "Email",
+          "url": "mailto:info@procadlogistic.com",
+          "icon": "email"
+        },
+        {
+          "name": "Instagram",
+          "url": "https://www.instagram.com/procadlogistic",
+          "icon": "instagram"
+        },
+        {
+          "name": "Facebook",
+          "url": "https://www.facebook.com/procadlogistic",
+          "icon": "facebook"
+        },
+        {
+          "name": "YouTube",
+          "url": "https://www.youtube.com/@procadlogistic",
+          "icon": "youtube"
+        }
+      ],
+      "links": [
+        {
+          "id": "careers",
+          "label": "CAREERS",
+          "path": "careers"
+        },
+        {
+          "id": "dash",
+          "label": "DASH",
+          "path": "dash"
+        },
+        {
+          "id": "contact",
+          "label": "CONTACT",
+          "path": "contact"
+        },
+        {
+          "id": "terms",
+          "label": "TERMS AND CONDITIONS",
+          "path": "terms"
+        }
+      ]
+    }
+  }
 }

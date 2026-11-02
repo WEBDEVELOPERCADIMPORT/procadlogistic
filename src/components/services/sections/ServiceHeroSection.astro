@@ -1,0 +1,34 @@
+---
+import type { Lang } from "../../../i18n/config.i18n";
+import type { ServiceItem } from "../../../actions/services/services.action";
+
+interface Props {
+  lang: Lang;
+  service?: ServiceItem;
+}
+
+const { lang } = Astro.props;
+
+const heroTitle = lang === "es" ? "SERVICIOS" : "SERVICES";
+---
+
+<section
+  class="relative w-full h-64 sm:h-80 md:h-[380px] overflow-hidden flex items-center justify-center bg-neutral-100"
+>
+  <img
+    src="/images/services/hero-warehouse.png"
+    alt={heroTitle}
+    class="absolute inset-0 w-full h-full object-cover object-center z-0"
+    loading="eager"
+  />
+  <!-- Translucent overlay for black text contrast -->
+  <div class="absolute inset-0 bg-white/35 backdrop-blur-[0.5px] z-1"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+    <h1
+      class="text-4xl sm:text-6xl md:text-7xl font-black text-neutral-950 uppercase tracking-tight drop-shadow-sm"
+    >
+      {heroTitle}
+    </h1>
+  </div>
+</section>

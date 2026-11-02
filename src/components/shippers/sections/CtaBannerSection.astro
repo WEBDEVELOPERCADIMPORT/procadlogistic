@@ -1,0 +1,24 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const bannerText = lang === 'es'
+  ? '¿NECESITA CAPACIDAD HOY? CONTACTE A PROCAD LOGISTIC'
+  : 'NEED CAPACITY TODAY? CONTACT PROCAD LOGISTIC';
+---
+
+<section class="w-full bg-[#00aeef] py-7 px-4 text-center">
+  <div class="max-w-7xl mx-auto">
+    <a
+      href={`/${lang}/quote`}
+      class="inline-block text-white font-extrabold text-lg sm:text-xl uppercase tracking-wider hover:underline focus:outline-none"
+    >
+      {bannerText} &rarr;
+    </a>
+  </div>
+</section>

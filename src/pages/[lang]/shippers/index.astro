@@ -1,0 +1,34 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import shippersContent from '../../../data/site-shippers-content.json';
+import { LANGUAGES, type Lang } from '../../../i18n/config.i18n';
+import { actions } from 'astro:actions';
+import ShippersHeroSection from '../../../components/shippers/sections/ShippersHeroSection.astro';
+import ServicesCatalogSection from '../../../components/shippers/sections/ServicesCatalogSection.astro';
+import CtaBannerSection from '../../../components/shippers/sections/CtaBannerSection.astro';
+
+const lang = Astro.params.lang as Lang;
+
+// 1. Validar idioma
+if (!(lang in LANGUAGES) || !(lang in shippersContent)) {
+  return Astro.redirect('/404');
+}
+
+const content = shippersContent[lang];
+
+// 2. Consultar servicios dinámicos mediante Server Action
+const { data: servicesResponse } = await Astro.callAction(actions.getServices, {});
+const services = servicesResponse?.data ?? [];
+---
+
+<Layout
+  title={content.meta.title}
+  lang={lang}
+  description={content.meta.description}
+>
+  <main class="w-full bg-white">
+    <ShippersHeroSection lang={lang} />
+    <ServicesCatalogSection lang={lang} services={services} />
+    <CtaBannerSection lang={lang} />
+  </main>
+</Layout>

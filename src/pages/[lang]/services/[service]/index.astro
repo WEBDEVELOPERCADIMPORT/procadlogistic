@@ -1,0 +1,48 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import serviceContent from '../../../../data/site-service-content.json';
+import { LANGUAGES, type Lang } from '../../../../i18n/config.i18n';
+import { actions } from 'astro:actions';
+import ServiceHeroSection from '../../../../components/services/sections/ServiceHeroSection.astro';
+import ServiceDetailSection from '../../../../components/services/sections/ServiceDetailSection.astro';
+import ReliabilityFeaturesSection from '../../../../components/services/sections/ReliabilityFeaturesSection.astro';
+import StressFreeCtaSection from '../../../../components/services/sections/StressFreeCtaSection.astro';
+
+const lang = Astro.params.lang as Lang;
+const { service: serviceSlug } = Astro.params;
+
+// 1. Validar idioma y parámetro
+if (!(lang in LANGUAGES) || !(lang in serviceContent) || !serviceSlug) {
+  return Astro.redirect('/404');
+}
+
+const content = serviceContent[lang];
+
+// 2. Consultar servicio por slug mediante Server Action
+const { data: serviceResponse, error: serviceError } = await Astro.callAction(
+  actions.getServiceBySlug,
+  { slug: serviceSlug }
+);
+
+if (serviceError || !serviceResponse?.data) {
+  return Astro.redirect('/404');
+}
+
+const service = serviceResponse.data;
+const serviceTitle = service.title[lang] ?? service.title.es;
+const serviceDescription = service.description[lang] ?? service.description.es;
+---
+
+<Layout
+  title={`${serviceTitle} ${content.meta.titleSuffix}`}
+  lang={lang}
+  description={serviceDescription}
+  image={service.image}
+>
+  <main class="w-full bg-white">
+    <ServiceHeroSection lang={lang} service={service} />
+    <ServiceDetailSection lang={lang} service={service} />
+    <ReliabilityFeaturesSection lang={lang} />
+    <StressFreeCtaSection lang={lang} currentSlug={serviceSlug} />
+  </main>
+</Layout>

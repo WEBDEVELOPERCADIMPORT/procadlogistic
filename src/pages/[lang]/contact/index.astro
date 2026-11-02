@@ -1,0 +1,27 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import contactContent from '../../../data/site-contact-content.json';
+import { LANGUAGES, type Lang } from '../../../i18n/config.i18n';
+import ContactHeroSection from '../../../components/contact/sections/ContactHeroSection.astro';
+import ContactInfoSection from '../../../components/contact/sections/ContactInfoSection.astro';
+
+const lang = Astro.params.lang as Lang;
+
+// 1. Validar idioma
+if (!(lang in LANGUAGES) || !(lang in contactContent)) {
+  return Astro.redirect('/404');
+}
+
+const content = contactContent[lang];
+---
+
+<Layout
+  title={content.meta.title}
+  lang={lang}
+  description={content.meta.description}
+>
+  <main class="w-full bg-white">
+    <ContactHeroSection lang={lang} />
+    <ContactInfoSection lang={lang} />
+  </main>
+</Layout>

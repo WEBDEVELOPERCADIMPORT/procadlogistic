@@ -1,0 +1,27 @@
+---
+import type { Lang } from '../../../i18n/config.i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const heroText = lang === 'es' ? 'TRANSPORTE EN EL QUE PUEDE CONFIAR' : 'TRANSPORTATION YOU CAN TRUST';
+---
+
+<section class="relative w-full h-72 sm:h-96 md:h-[450px] overflow-hidden flex items-center justify-center bg-neutral-900">
+  <img
+    src="/images/shippers/hero-truck.png"
+    alt="Highway commercial truck"
+    class="absolute inset-0 w-full h-full object-cover object-center brightness-75"
+    loading="eager"
+  />
+  <div class="absolute inset-0 bg-black/35"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+    <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tight leading-tight drop-shadow-md">
+      {heroText}
+    </h1>
+  </div>
+</section>
