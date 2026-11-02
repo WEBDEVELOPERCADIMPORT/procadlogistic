@@ -2,6 +2,7 @@
 import type { Lang } from '../../../i18n/config.i18n';
 import type { ServiceItem } from '../../../actions/services/services.action';
 import servicesData from '../../../data/services/services.data.json';
+import FadeInText from '@astroanimate/core/FadeInText';
 
 interface Props {
   lang: Lang;
@@ -61,9 +62,11 @@ const quoteButtonText = lang === 'es' ? 'SOLICITAR COTIZACIÓN' : 'GET A QUOTE';
       <div class="lg:col-span-9 space-y-12">
         
         <!-- Header: Service Title in Cyan -->
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#00aeef]">
-          {serviceTitle}
-        </h2>
+        <FadeInText duration={0.6} yOffset={20}>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#00aeef]">
+            {serviceTitle}
+          </h2>
+        </FadeInText>
 
         <!-- 2 Columns: Service Photo (Left) + Description (Right) -->
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
@@ -92,9 +95,10 @@ const quoteButtonText = lang === 'es' ? 'SOLICITAR COTIZACIÓN' : 'GET A QUOTE';
             </h3>
             <a
               href={`/${lang}/quote?service=${service.slug}`}
-              class="bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-6 py-2.5 rounded-none transition-colors"
+              class="relative inline-flex items-center justify-center bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-6 py-2.5 rounded-none shadow-md shadow-[#00aeef]/20 transition-all duration-200 transform hover:scale-[1.02] overflow-hidden group/btn"
             >
-              {quoteButtonText}
+              <span class="relative z-10">{quoteButtonText}</span>
+              <span class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
             </a>
           </div>
 

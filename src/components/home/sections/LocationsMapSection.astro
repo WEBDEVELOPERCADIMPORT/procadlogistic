@@ -1,5 +1,6 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
+import FadeInText from '@astroanimate/core/FadeInText';
 
 interface Props {
   lang: Lang;
@@ -8,52 +9,107 @@ interface Props {
 const { lang } = Astro.props;
 
 const title = lang === 'es' ? 'UBICACIONES DE OFICINAS' : 'OFFICE LOCATIONS';
+const addressText = '650 Centerpoint Blvd, New Castle, Delaware 19720';
+const mapsUrl = 'https://maps.google.com/?q=650+Centerpoint+Blvd,+New+Castle,+DE+19720';
+const mapEmbedSrc = 'https://maps.google.com/maps?q=650+Centerpoint+Blvd%2C+New+Castle%2C+DE+19720&t=&z=15&ie=UTF8&iwloc=&output=embed';
 
 const officeLines = [
   'Atlanta | Birmingham | Buffalo',
   'Chattanooga | Denver | Fort Worth | Gainesville',
-  'Indianapolis (HQ) | Jackson | Kansas City',
+  'New Castle (Hub) | Jackson | Kansas City',
   'Nashville | Omaha | Scottsdale',
 ];
 ---
 
-<section class="w-full bg-white py-20 lg:py-28 text-neutral-900">
+<section class="w-full bg-white py-20 lg:py-28 text-neutral-900 border-t border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
-      <!-- Left Column: Map Graphic -->
-      <div class="lg:col-span-6 flex justify-center">
-        <div class="w-full max-w-xl">
-          <img
-            src="/images/home/usa-map.png"
-            alt="Office Locations Nationwide Map"
-            class="w-full h-auto object-contain"
+      <!-- Left Column: Interactive Google Map with Address -->
+      <div class="lg:col-span-6 flex flex-col justify-center space-y-4">
+        <div class="relative w-full h-80 sm:h-96 lg:h-[420px] bg-gray-100 border border-gray-300 overflow-hidden shadow-sm">
+          <iframe
+            title="ProCAD Logistic Main Location Map"
+            src={mapEmbedSrc}
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
             loading="lazy"
-          />
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full"
+          ></iframe>
+
+          <!-- Open in Maps Floating Action Button -->
+          <a
+            href={mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="absolute top-4 left-4 z-10 inline-flex items-center gap-2 bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-wider px-4 py-2 shadow-md transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+            </svg>
+            <span>{lang === 'es' ? 'Abrir en Maps' : 'Open in Maps'}</span>
+          </a>
+        </div>
+
+        <!-- Address Badge Info Below Map -->
+        <div class="p-3 bg-gray-50 border border-gray-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs">
+          <div>
+            <span class="font-extrabold text-neutral-900 uppercase">ProCAD Logistic:</span>{' '}
+            <span class="text-neutral-700 font-medium">{addressText}</span>
+          </div>
+          <a
+            href={mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[#00aeef] font-bold hover:underline shrink-0"
+          >
+            {lang === 'es' ? 'Ver en Google Maps ↗' : 'View on Google Maps ↗'}
+          </a>
         </div>
       </div>
 
       <!-- Right Column: OFFICE LOCATIONS List with | dividers -->
       <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-neutral-900">
-          {title}
-        </h2>
-
-        <div class="space-y-4 pt-2">
-          {officeLines.map((line) => (
-            <p class="text-sm sm:text-base font-bold text-neutral-700 tracking-wide">
-              {line}
-            </p>
-          ))}
+        <div class="space-y-2">
+          <p class="text-xs font-black uppercase tracking-widest text-[#00aeef]">
+            {lang === 'es' ? 'COBERTURA NACIONAL' : 'NATIONWIDE NETWORK'}
+          </p>
+          <FadeInText duration={0.6} yOffset={20}>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-neutral-900">
+              {title}
+            </h2>
+          </FadeInText>
         </div>
 
-        <div class="pt-6">
-          <a
-            href={`/${lang}/contact`}
-            class="inline-block bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 rounded-none transition-colors"
-          >
-            {lang === 'es' ? 'CONTACTAR UNA OFICINA' : 'CONTACT A BRANCH'}
-          </a>
+        <FadeInText duration={0.6} delay={0.1} yOffset={15}>
+          <div class="space-y-4 pt-2">
+            {officeLines.map((line) => (
+              <p class="text-sm sm:text-base font-bold text-neutral-800 tracking-wide">
+                {line}
+              </p>
+            ))}
+          </div>
+        </FadeInText>
+
+        <div class="pt-4 space-y-3">
+          <p class="text-xs text-neutral-500 max-w-md">
+            {lang === 'es'
+              ? 'Conectamos centros logísticos clave en toda la unión americana con despacho 24/7 y monitoreo en tiempo real.'
+              : 'Connecting prime freight hubs across North America with 24/7 proactive dispatch and real-time shipment telemetry.'}
+          </p>
+          
+          <div>
+            <a
+              href={`/${lang}/contact`}
+              class="relative inline-flex items-center justify-center bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 rounded-none shadow-md shadow-[#00aeef]/20 transition-all duration-200 transform hover:scale-[1.02] overflow-hidden group/btn cursor-pointer"
+            >
+              <span class="relative z-10">{lang === 'es' ? 'CONTACTAR UNA OFICINA' : 'CONTACT A BRANCH'}</span>
+              <span class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
+            </a>
+          </div>
         </div>
       </div>
 

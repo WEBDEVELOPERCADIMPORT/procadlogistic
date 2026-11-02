@@ -26,8 +26,8 @@
       },
       "address": {
         "label": "Oficina Central",
-        "value": "1200 Logistics Boulevard, Suite 400",
-        "details": "Laredo, TX 78045, Estados Unidos"
+        "value": "650 Centerpoint Blvd",
+        "details": "New Castle, Delaware 19720, Estados Unidos"
       },
       "hours": {
         "label": "Horarios de Operación",
@@ -126,8 +126,8 @@
       },
       "address": {
         "label": "Corporate Headquarters",
-        "value": "1200 Logistics Boulevard, Suite 400",
-        "details": "Laredo, TX 78045, United States"
+        "value": "650 Centerpoint Blvd",
+        "details": "New Castle, Delaware 19720, United States"
       },
       "hours": {
         "label": "Operating Hours",

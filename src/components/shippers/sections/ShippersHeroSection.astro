@@ -1,5 +1,6 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
+import FadeInText from '@astroanimate/core/FadeInText';
 
 interface Props {
   lang: Lang;
@@ -20,8 +21,10 @@ const heroText = lang === 'es' ? 'TRANSPORTE EN EL QUE PUEDE CONFIAR' : 'TRANSPO
   <div class="absolute inset-0 bg-black/35"></div>
 
   <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
-    <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tight leading-tight drop-shadow-md">
-      {heroText}
-    </h1>
+    <FadeInText duration={0.8} yOffset={25}>
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tight leading-tight drop-shadow-md">
+        {heroText}
+      </h1>
+    </FadeInText>
   </div>
 </section>

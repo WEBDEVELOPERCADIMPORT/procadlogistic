@@ -1,5 +1,6 @@
 ---
 import type { Lang } from "../../../i18n/config.i18n";
+import FadeInText from "@astroanimate/core/FadeInText";
 
 interface Props {
   lang: Lang;
@@ -27,23 +28,24 @@ const ctaLabel = lang === "es" ? "SOLICITAR COTIZACIÓN" : "REQUEST A QUOTE";
   <div class="absolute inset-0 bg-white/30 backdrop-blur-[0.5px] z-1"></div>
 
   <!-- 3. Headline & CTA Button in front of everything -->
-  <div
-    class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center justify-center"
-  >
-    <h1
-      class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-neutral-950 tracking-tight uppercase leading-[1.05] drop-shadow-sm"
-    >
-      <span class="block font-black">{titleLine1}</span>
-      <span class="block">{titleLine2}</span>
-    </h1>
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex flex-col items-center justify-center">
+    <FadeInText duration={0.8} delay={0.1} yOffset={25}>
+      <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-neutral-950 tracking-tight uppercase leading-[1.05] drop-shadow-sm">
+        <span class="block">{titleLine1}</span>
+        <span class="block">{titleLine2}</span>
+      </h1>
+    </FadeInText>
 
     <div class="mt-8 sm:mt-10">
-      <a
-        href={`/${lang}/quote`}
-        class="inline-block bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs sm:text-sm font-black uppercase tracking-widest px-10 sm:px-12 py-4 transition-all duration-200 rounded-none shadow-xl hover:shadow-[#00aeef]/30 hover:scale-[1.02]"
-      >
-        {ctaLabel}
-      </a>
+      <FadeInText duration={0.6} delay={0.2} yOffset={15}>
+        <a
+          href={`/${lang}/quote`}
+          class="relative inline-flex items-center justify-center bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs sm:text-sm font-black uppercase tracking-widest px-10 sm:px-12 py-4 rounded-none shadow-xl shadow-[#00aeef]/25 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] overflow-hidden group cursor-pointer"
+        >
+          <span class="relative z-10">{ctaLabel}</span>
+          <span class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
+        </a>
+      </FadeInText>
     </div>
   </div>
 </section>

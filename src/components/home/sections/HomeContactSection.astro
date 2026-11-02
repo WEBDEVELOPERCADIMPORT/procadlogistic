@@ -1,5 +1,6 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
+import FadeInText from '@astroanimate/core/FadeInText';
 
 interface Props {
   lang: Lang;
@@ -22,12 +23,14 @@ const texts = {
 <section class="w-full bg-[#f8f9fa] py-20 lg:py-28 text-neutral-900 border-t border-gray-200">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-neutral-900">
-      {texts.title}
-    </h2>
-    <p class="mt-2 text-xs uppercase tracking-widest font-bold text-[#00aeef]">
-      {texts.subtitle}
-    </p>
+    <FadeInText duration={0.6} yOffset={20}>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-neutral-900">
+        {texts.title}
+      </h2>
+      <p class="mt-2 text-xs uppercase tracking-widest font-bold text-[#00aeef]">
+        {texts.subtitle}
+      </p>
+    </FadeInText>
 
     <!-- Clean crisp form with border-gray-300 and rounded-none -->
     <form id="home-contact-form" class="mt-12 space-y-6 text-left">

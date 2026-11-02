@@ -2,6 +2,7 @@
 import type { Lang } from '../../../i18n/config.i18n';
 import type { ServiceItem } from '../../../actions/services/services.action';
 import defaultServicesData from '../../../data/services/services.data.json';
+import FadeInText from '@astroanimate/core/FadeInText';
 
 interface Props {
   lang: Lang;
@@ -19,9 +20,11 @@ const serviceDescription = currentService.description[lang] ?? currentService.de
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
     
     <!-- Cyan Service Title -->
-    <h1 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#00aeef]">
-      {serviceTitle}
-    </h1>
+    <FadeInText duration={0.6} yOffset={20}>
+      <h1 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#00aeef]">
+        {serviceTitle}
+      </h1>
+    </FadeInText>
 
     <!-- 2 Columns: Equipment Thumbnail Photo (Left) + Description (Right) -->
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
@@ -35,9 +38,11 @@ const serviceDescription = currentService.description[lang] ?? currentService.de
       </div>
 
       <div class="md:col-span-8 space-y-4">
-        <p class="text-base text-neutral-700 leading-relaxed font-normal">
-          {serviceDescription}
-        </p>
+        <FadeInText duration={0.6} delay={0.1} yOffset={15}>
+          <p class="text-base text-neutral-700 leading-relaxed font-normal">
+            {serviceDescription}
+          </p>
+        </FadeInText>
       </div>
     </div>
 

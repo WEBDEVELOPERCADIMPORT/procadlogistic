@@ -1,5 +1,6 @@
 ---
 import type { Lang } from "../../../i18n/config.i18n";
+import ScaleIn from "@astroanimate/core/ScaleIn";
 
 interface Props {
   lang: Lang;
@@ -32,72 +33,78 @@ const carriers = {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
       <!-- Card 1: SHIPPERS -->
-      <div
-        class="flex flex-row bg-white border border-gray-100 shadow-sm overflow-hidden group"
-      >
-        <div class="h-64 sm:h-80 overflow-hidden bg-gray-100">
-          <img
-            src="/images/home/shippers-warehouse.png"
-            alt={shippers.title}
-            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-            loading="lazy"
-          />
-        </div>
+      <ScaleIn duration={0.6} delay={0.05}>
         <div
-          class="p-8 sm:p-10 flex flex-col items-center text-center space-y-4"
+          class="flex flex-col sm:flex-row bg-white border border-gray-100 shadow-sm overflow-hidden group hover:shadow-md transition-shadow duration-300"
         >
-          <h3
-            class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-neutral-900"
+          <div class="w-full sm:w-1/2 h-56 sm:h-auto overflow-hidden bg-gray-100">
+            <img
+              src="/images/home/shippers-warehouse.png"
+              alt={shippers.title}
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="w-full sm:w-1/2 p-8 sm:p-10 flex flex-col items-center justify-center text-center space-y-4"
           >
-            {shippers.title}
-          </h3>
-          <p class="text-base text-neutral-600 italic">
-            "{shippers.tagline}"
-          </p>
-          <div class="pt-2">
-            <a
-              href={shippers.link}
-              class="inline-block bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 rounded-none transition-colors"
+            <h3
+              class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-neutral-900"
             >
-              {shippers.cta}
-            </a>
+              {shippers.title}
+            </h3>
+            <p class="text-base text-neutral-600 italic">
+              "{shippers.tagline}"
+            </p>
+            <div class="pt-2">
+              <a
+                href={shippers.link}
+                class="relative inline-flex items-center justify-center bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 rounded-none shadow-md shadow-[#00aeef]/20 transition-all duration-200 transform hover:scale-[1.02] overflow-hidden group/btn"
+              >
+                <span class="relative z-10">{shippers.cta}</span>
+                <span class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      </ScaleIn>
 
       <!-- Card 2: CARRIERS -->
-      <div
-        class="flex flex-row bg-white border border-gray-100 shadow-sm overflow-hidden group"
-      >
-        <div class="h-64 sm:h-80 overflow-hidden bg-gray-100">
-          <img
-            src="/images/home/carrier-truck.png"
-            alt={carriers.title}
-            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-            loading="lazy"
-          />
-        </div>
+      <ScaleIn duration={0.6} delay={0.15}>
         <div
-          class="p-8 sm:p-10 flex flex-col items-center text-center space-y-4"
+          class="flex flex-col sm:flex-row bg-white border border-gray-100 shadow-sm overflow-hidden group hover:shadow-md transition-shadow duration-300"
         >
-          <h3
-            class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-neutral-900"
+          <div class="w-full sm:w-1/2 h-56 sm:h-auto overflow-hidden bg-gray-100">
+            <img
+              src="/images/home/carrier-truck.png"
+              alt={carriers.title}
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div
+            class="w-full sm:w-1/2 p-8 sm:p-10 flex flex-col items-center justify-center text-center space-y-4"
           >
-            {carriers.title}
-          </h3>
-          <p class="text-base text-neutral-600 italic">
-            "{carriers.tagline}"
-          </p>
-          <div class="pt-2">
-            <a
-              href={carriers.link}
-              class="inline-block bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 rounded-none transition-colors"
+            <h3
+              class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-neutral-900"
             >
-              {carriers.cta}
-            </a>
+              {carriers.title}
+            </h3>
+            <p class="text-base text-neutral-600 italic">
+              "{carriers.tagline}"
+            </p>
+            <div class="pt-2">
+              <a
+                href={carriers.link}
+                class="relative inline-flex items-center justify-center bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 rounded-none shadow-md shadow-[#00aeef]/20 transition-all duration-200 transform hover:scale-[1.02] overflow-hidden group/btn"
+              >
+                <span class="relative z-10">{carriers.cta}</span>
+                <span class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      </ScaleIn>
     </div>
   </div>
 </section>

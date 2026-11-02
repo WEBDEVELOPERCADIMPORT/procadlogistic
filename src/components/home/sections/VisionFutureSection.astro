@@ -1,5 +1,6 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
+import FadeInText from '@astroanimate/core/FadeInText';
 
 interface Props {
   lang: Lang;
@@ -18,39 +19,44 @@ const ctaLabel = lang === 'es' ? 'CONOZCA MÁS' : 'LEARN MORE';
       
       <!-- Left Column: Bold Typography & CTA -->
       <div class="lg:col-span-6 space-y-6">
-        <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-neutral-900 leading-none">
-          <span>{titleLine1}</span>
-          <br />
-          <span class="text-[#00aeef]">{titleLine2}</span>
-        </h2>
+        <FadeInText duration={0.6} yOffset={25}>
+          <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-neutral-900 leading-none">
+            <span>{titleLine1}</span>
+            <br />
+            <span class="text-[#00aeef]">{titleLine2}</span>
+          </h2>
+        </FadeInText>
 
-        {lang === 'es' ? (
-          <p class="text-base text-neutral-700 leading-relaxed max-w-xl">
-            ProCAD Logistic está transformando el panorama del corretaje de transporte mediante la inversión continua en infraestructura tecnológica de clase mundial, una red calificada de transportistas y profesionales apasionados comprometidos con la puntualidad de su cadena de valor.
-          </p>
-        ) : (
-          <p class="text-base text-neutral-700 leading-relaxed max-w-xl">
-            ProCAD Logistic is redefining freight transportation through continuous investment in advanced logistics technology, audited carrier partnerships, and a dedicated team committed to total supply chain reliability.
-          </p>
-        )}
+        <FadeInText duration={0.6} delay={0.1} yOffset={20}>
+          {lang === 'es' ? (
+            <p class="text-base text-neutral-700 leading-relaxed max-w-xl">
+              ProCAD Logistic está transformando el panorama del corretaje de transporte mediante la inversión continua en infraestructura tecnológica de clase mundial, una red calificada de transportistas y profesionales apasionados comprometidos con la puntualidad de su cadena de valor.
+            </p>
+          ) : (
+            <p class="text-base text-neutral-700 leading-relaxed max-w-xl">
+              ProCAD Logistic is redefining freight transportation through continuous investment in advanced logistics technology, audited carrier partnerships, and a dedicated team committed to total supply chain reliability.
+            </p>
+          )}
+        </FadeInText>
 
         <div class="pt-2">
           <a
             href={`/${lang}/`}
-            class="inline-block bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 rounded-none transition-colors"
+            class="relative inline-flex items-center justify-center bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs font-black uppercase tracking-widest px-8 py-3.5 rounded-none shadow-md shadow-[#00aeef]/20 transition-all duration-200 transform hover:scale-[1.02] overflow-hidden group/btn"
           >
-            {ctaLabel}
+            <span class="relative z-10">{ctaLabel}</span>
+            <span class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
           </a>
         </div>
       </div>
 
       <!-- Right Column: Operations Center Photograph -->
       <div class="lg:col-span-6">
-        <div class="relative overflow-hidden bg-gray-200 shadow-lg">
+        <div class="relative overflow-hidden bg-gray-200 shadow-lg group">
           <img
             src="/images/home/operations-center.png"
             alt="ProCAD Logistics Control Room"
-            class="w-full h-80 sm:h-96 object-cover object-center"
+            class="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-102 transition-transform duration-500"
             loading="lazy"
           />
         </div>

@@ -1,5 +1,6 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
+import FadeInText from '@astroanimate/core/FadeInText';
 
 interface Props {
   lang: Lang;
@@ -14,11 +15,13 @@ const bannerText = lang === 'es'
 
 <section class="w-full bg-[#00aeef] py-7 px-4 text-center">
   <div class="max-w-7xl mx-auto">
-    <a
-      href={`/${lang}/quote`}
-      class="inline-block text-white font-extrabold text-lg sm:text-xl uppercase tracking-wider hover:underline focus:outline-none"
-    >
-      {bannerText} &rarr;
-    </a>
+    <FadeInText duration={0.6}>
+      <a
+        href={`/${lang}/quote`}
+        class="inline-block text-white font-extrabold text-lg sm:text-xl uppercase tracking-wider hover:underline focus:outline-none"
+      >
+        {bannerText} &rarr;
+      </a>
+    </FadeInText>
   </div>
 </section>

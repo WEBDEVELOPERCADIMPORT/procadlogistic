@@ -1,5 +1,6 @@
 ---
 import type { Lang } from '../../../i18n/config.i18n';
+import FadeInText from '@astroanimate/core/FadeInText';
 
 interface Props {
   lang: Lang;
@@ -16,13 +17,15 @@ const quoteBtnText = lang === 'es' ? 'SOLICITAR COTIZACIÓN' : 'GET A QUOTE';
   <div class="max-w-4xl mx-auto flex flex-col items-center justify-center space-y-6">
     
     <!-- Title with FREE in Cyan -->
-    <h2 class="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight flex items-center justify-center gap-3">
-      {lang === 'es' ? (
-        <span>ENVÍE SIN <span class="text-[#00aeef]">ESTRÉS</span></span>
-      ) : (
-        <span>SHIP STRESS <span class="text-[#00aeef]">FREE</span></span>
-      )}
-    </h2>
+    <FadeInText duration={0.6} yOffset={20}>
+      <h2 class="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight flex items-center justify-center gap-3">
+        {lang === 'es' ? (
+          <span>ENVÍE SIN <span class="text-[#00aeef]">ESTRÉS</span></span>
+        ) : (
+          <span>SHIP STRESS <span class="text-[#00aeef]">FREE</span></span>
+        )}
+      </h2>
+    </FadeInText>
 
     <!-- Down Chevron Icon -->
     <div class="text-[#00aeef]">
@@ -31,13 +34,14 @@ const quoteBtnText = lang === 'es' ? 'SOLICITAR COTIZACIÓN' : 'GET A QUOTE';
       </svg>
     </div>
 
-    <!-- Cyan Button -->
+    <!-- Cyan Button with Shimmer Effect -->
     <div class="pt-2">
       <a
         href={quoteUrl}
-        class="inline-block bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs sm:text-sm font-black uppercase tracking-widest px-10 py-4 rounded-none transition-colors shadow-md"
+        class="relative inline-flex items-center justify-center bg-[#00aeef] hover:bg-[#0098d4] text-white text-xs sm:text-sm font-black uppercase tracking-widest px-10 py-4 rounded-none shadow-xl shadow-[#00aeef]/25 transition-all duration-200 transform hover:scale-[1.02] overflow-hidden group cursor-pointer"
       >
-        {quoteBtnText}
+        <span class="relative z-10">{quoteBtnText}</span>
+        <span class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
       </a>
     </div>
 
